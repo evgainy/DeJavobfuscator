@@ -1,0 +1,1622 @@
+[
+  {
+    "source": "interface A {\n    fun funFromA() {}\n\n}\n",
+    "decompiled": "public interface A {\n\n    \n    public static final class DefaultImpls {\n        public static void funFromA(A a5) {\n        }\n    }\n\n    void funFromA();\n}\n"
+  },
+  {
+    "source": "class Address {\n    var name: String = \"Holmes, Sherlock\"\n    var street: String = \"Baker\"\n    var city: String = \"London\"\n    var state: String? = null\n    var zip: String = \"123456\"\n}",
+    "decompiled": "public final class Address {\n\n    \n    public String f3481d;\n\n    \n    public String f3479a = \"Holmes, Sherlock\";\n\n    \n    public String f3480b = \"Baker\";\n    public String c = \"London\";\n\n    \n    public String f3482e = \"123456\";\n\n    public final String getCity() {\n        return this.c;\n    }\n\n    public final String getName() {\n        return this.f3479a;\n    }\n\n    public final String getState() {\n        return this.f3481d;\n    }\n\n    public final String getStreet() {\n        return this.f3480b;\n    }\n\n    public final String getZip() {\n        return this.f3482e;\n    }\n\n    public final void setCity(String str) {\n        i.e(\"<set-?>\", str);\n        this.c = str;\n    }\n\n    public final void setName(String str) {\n        i.e(\"<set-?>\", str);\n        this.f3479a = str;\n    }\n\n    public final void setState(String str) {\n        this.f3481d = str;\n    }\n\n    public final void setStreet(String str) {\n        i.e(\"<set-?>\", str);\n        this.f3480b = str;\n    }\n\n    public final void setZip(String str) {\n        i.e(\"<set-?>\", str);\n        this.f3482e = str;\n    }\n}\n"
+  },
+  {
+    "source": "object AnotherGame {\n\n}\n\n",
+    "decompiled": "public final class AnotherGame {\n    public static final AnotherGame INSTANCE = new AnotherGame();\n}\n"
+  },
+  {
+    "source": "class ArticleHeadline {\n\n}\n",
+    "decompiled": "public final class ArticleHeadline {\n}\n"
+  },
+  {
+    "source": "enum class Bit {\n    ZERO, ONE\n}",
+    "decompiled": "public enum Bit {\n    ZERO,\n    ONE\n}\n"
+  },
+  {
+    "source": "open class Car {\n    val id: String\n    val type: String\n\n    constructor(id: String, type: String) {\n        this.id = id\n        this.type = type\n    }\n}",
+    "decompiled": "public class Car {\n\n    \n    public final String f3483a;\n\n    \n    public final String f3484b;\n\n    public Car(String str, String str2) {\n        i.e(\"id\", str);\n        i.e(\"type\", str2);\n        this.f3483a = str;\n        this.f3484b = str2;\n    }\n\n    public final String getId() {\n        return this.f3483a;\n    }\n\n    public final String getType() {\n        return this.f3484b;\n    }\n}\n"
+  },
+  {
+    "source": "class Car12 (val id: String, val type: String) {\n    constructor(id: String): this(id, \"unknown\")\n}",
+    "decompiled": "public final class Car12 {\n\n    \n    public final String f3485a;\n\n    \n    public final String f3486b;\n\n    public Car12(String str, String str2) {\n        i.e(\"id\", str);\n        i.e(\"type\", str2);\n        this.f3485a = str;\n        this.f3486b = str2;\n    }\n\n    public final String getId() {\n        return this.f3485a;\n    }\n\n    public final String getType() {\n        return this.f3486b;\n    }\n\n    \n    public Car12(String str) {\n        this(str, \"unknown\");\n        i.e(\"id\", str);\n    }\n}\n"
+  },
+  {
+    "source": "class Car56 {\n\n    fun getObject() = object {\n        val x: String = \"x\"\n    }\n\n\n    fun getObjectA() = object: A {\n        override fun funFromA() {}\n        val x: String = \"x\"\n    }\n}",
+    "decompiled": "public final class Car56 {\n    public final Object getObject() {\n        return new Object() {\n\n            \n            public final String f3487a = \"x\";\n\n            public final String getX() {\n                return this.f3487a;\n            }\n        };\n    }\n\n    public final A getObjectA() {\n        return new A() {\n\n            \n            public final String f3488a = \"x\";\n\n            @Override\n            public void funFromA() {\n            }\n\n            public final String getX() {\n                return this.f3488a;\n            }\n        };\n    }\n}\n"
+  },
+  {
+    "source": "interface Comparable<in T> {\n    operator fun compareTo(other: T): Int\n}",
+    "decompiled": "public interface Comparable<T> {\n    int compareTo(T t5);\n}\n"
+  },
+  {
+    "source": "open class Constructors {\n    init {\n        println(\"Init block\")\n    }\n\n    constructor(i: Int) {\n        println(\"Constructor $i\")\n    }\n}",
+    "decompiled": "public class Constructors {\n    public Constructors(int i5) {\n        System.out.println((Object) \"Init block\");\n        System.out.println((Object) (\"Constructor \" + i5));\n    }\n}\n"
+  },
+  {
+    "source": "annotation class Deprecated(\n    val message: String,\n    val replaceWith: ReplaceWith = ReplaceWith(\"\"))",
+    "decompiled": "public @interface Deprecated {\n    String message();\n\n    e replaceWith() default @e(expression = \"\", imports = {});\n}\n"
+  },
+  {
+    "source": "enum class EnumClass : InterfaceEx",
+    "decompiled": "public enum EnumClass implements InterfaceEx {\n}\n"
+  },
+  {
+    "source": "open class Example (val map: Map<String, Any?>) {\n    val name: String by map\n    val age: Int     by map\n}",
+    "decompiled": "public class Example {\n\n    \n    public static final  e<Object>[] f3489b;\n\n    \n    public final Map<String, Object> f3490a;\n\n    static {\n        n nVar = new n(\"name\", \"getName()Ljava/lang/String;\");\n        q.f4126a.getClass();\n        f3489b = new e[]{nVar, new n(\"age\", \"getAge()I\")};\n    }\n\n    public Example(Map<String, ? extends Object> map) {\n        i.e(\"map\", map);\n        this.f3490a = map;\n    }\n\n    public final int getAge() {\n        return ((Number) m.o(this.f3490a, f3489b[1].getName())).intValue();\n    }\n\n    public final Map<String, Object> getMap() {\n        return this.f3490a;\n    }\n\n    public final String getName() {\n        return (String) m.o(this.f3490a, f3489b[0].getName());\n    }\n}\n"
+  },
+  {
+    "source": "annotation class Fancy(val why: String)",
+    "decompiled": "public @interface Fancy {\n    String why();\n}\n"
+  },
+  {
+    "source": "object Game {\n    init {\n        println(\"Welcome, adventurer.\")\n    }\n}",
+    "decompiled": "public final class Game {\n    public static final Game INSTANCE = new Game();\n\n    static {\n        System.out.println((Object) \"Welcome, adventurer.\");\n    }\n}\n"
+  },
+  {
+    "source": "class GameInput(arg: String?) {\n    private val input = arg ?: \"\"\n    val command = input.split(\" \")[0]\n    val argument = input.split(\" \").getOrElse(1, { \"\" })\n\n    private fun commandNotFound() = \"I'm not quite sure what you're tryin to do!\"\n\n    fun processCommand() = when (command.toLowerCase()) {\n        else -> commandNotFound()\n    }\n}",
+    "decompiled": "public final class GameInput {\n\n    \n    public final String f3491a;\n\n    \n    public final String f3492b;\n\n    public GameInput(String str) {\n        str = str == null ? \"\" : str;\n        this.f3491a = (String) j.C(str, new String[]{\" \"}).get(0);\n        List C = j.C(str, new String[]{\" \"});\n        this.f3492b = (String) (1 <= C.size() + (-1) ? C.get(1) : \"\");\n    }\n\n    public final String getArgument() {\n        return this.f3492b;\n    }\n\n    public final String getCommand() {\n        return this.f3491a;\n    }\n\n    public final String processCommand() {\n        i.d(\"this as java.lang.String).toLowerCase()\", this.f3491a.toLowerCase());\n        return \"I'm not quite sure what you're tryin to do!\";\n    }\n}\n"
+  },
+  {
+    "source": "open class InitOrderDemo(name: String) {\n    val firstProperty = \"First property: $name\".also(::println)\n\n    init {\n        println(\"First initializer block that prints $name\")\n    }\n\n    val secondProperty = \"Second property: ${name.length}\".also(::println)\n\n    init {\n        println(\"Second initializer block that prints ${name.length}\")\n    }\n}",
+    "decompiled": "public class InitOrderDemo {\n\n    \n    public final String f3493a;\n\n    \n    public final String f3494b;\n\n    public InitOrderDemo(String str) {\n        i.e(\"name\", str);\n        String c = e.c(\"First property: \", str);\n        System.out.println((Object) c);\n        this.f3493a = c;\n        System.out.println((Object) e.c(\"First initializer block that prints \", str));\n        String str2 = \"Second property: \" + str.length();\n        System.out.println((Object) str2);\n        this.f3494b = str2;\n        StringBuilder e5 = e.e(\"Second initializer block that prints \");\n        e5.append(str.length());\n        System.out.println((Object) e5.toString());\n    }\n\n    public final String getFirstProperty() {\n        return this.f3493a;\n    }\n\n    public final String getSecondProperty() {\n        return this.f3494b;\n    }\n}\n"
+  },
+  {
+    "source": "sealed interface InterfaceEx",
+    "decompiled": "public interface InterfaceEx {\n}\n"
+  },
+  {
+    "source": "class KotlinConf : Application() {\n    override fun attachBaseContext(base: Context) {\n        super.attachBaseContext(base)\n    }\n\n    companion object {\n        @Volatile\n        lateinit var service: Mutex\n    }\n}",
+    "decompiled": "public final class KotlinConf extends Application {\n    public static final Companion Companion = new Companion(null);\n    public static volatile Mutex service;\n\n    \n    public static final class Companion {\n        public Companion() {\n        }\n\n        public  Companion(e eVar) {\n            this();\n        }\n\n        public final Mutex getService() {\n            Mutex mutex = KotlinConf.service;\n            if (mutex != null) {\n                return mutex;\n            }\n            i.i(\"service\");\n            throw null;\n        }\n\n        public final void setService(Mutex mutex) {\n            i.e(\"<set-?>\", mutex);\n            KotlinConf.service = mutex;\n        }\n    }\n\n    @Override\n    public void attachBaseContext(Context context) {\n        i.e(\"base\", context);\n        super.attachBaseContext(context);\n    }\n}\n"
+  },
+  {
+    "source": "interface KProperty<T> {\n\n}\n",
+    "decompiled": "public interface KProperty<T> {\n}\n"
+  },
+  {
+    "source": "object MainRepository{\n\n    private var data:String? = null\n\n    fun loading(): ResultState {\n        val loadData = ResultState.LOADING\n        data = \"\"\n        return loadData\n    }\n    fun display (): ResultState {\n        val displayData = ResultState.SUCCESS(arrayOf(String))\n        data = null\n        return displayData\n    }\n    fun error(): ResultState {\n        return ResultState.ERROR(null)\n    }\n}",
+    "decompiled": "public final class MainRepository {\n    public static final MainRepository INSTANCE = new MainRepository();\n\n    public final ResultState display() {\n        return new ResultState.SUCCESS(new Object[]{d.f2344d});\n    }\n\n    public final ResultState error() {\n        return new ResultState.ERROR(null);\n    }\n\n    public final ResultState loading() {\n        return ResultState.LOADING.INSTANCE;\n    }\n}\n"
+  },
+  {
+    "source": "sealed class Menu{\n    data class PIZZA(val quantity:Int, val size:String, val name: String):Menu()\n    object NotInTheMunu : Menu()\n}",
+    "decompiled": "public abstract class Menu {\n\n    \n    public static final class NotInTheMunu extends Menu {\n        public static final NotInTheMunu INSTANCE = new NotInTheMunu();\n\n        public NotInTheMunu() {\n            super(null);\n        }\n    }\n\n    \n    public static final class PIZZA extends Menu {\n\n        \n        public final int f3495a;\n\n        \n        public final String f3496b;\n        public final String c;\n\n        \n        public PIZZA(int i5, String str, String str2) {\n            super(null);\n            i.e(\"size\", str);\n            i.e(\"name\", str2);\n            this.f3495a = i5;\n            this.f3496b = str;\n            this.c = str2;\n        }\n\n        public static  PIZZA copy$default(PIZZA pizza, int i5, String str, String str2, int i6, Object obj) {\n            if ((i6 & 1) != 0) {\n                i5 = pizza.f3495a;\n            }\n            if ((i6 & 2) != 0) {\n                str = pizza.f3496b;\n            }\n            if ((i6 & 4) != 0) {\n                str2 = pizza.c;\n            }\n            return pizza.copy(i5, str, str2);\n        }\n\n        public final int component1() {\n            return this.f3495a;\n        }\n\n        public final String component2() {\n            return this.f3496b;\n        }\n\n        public final String component3() {\n            return this.c;\n        }\n\n        public final PIZZA copy(int i5, String str, String str2) {\n            i.e(\"size\", str);\n            i.e(\"name\", str2);\n            return new PIZZA(i5, str, str2);\n        }\n\n        public boolean equals(Object obj) {\n            if (this == obj) {\n                return true;\n            }\n            if (obj instanceof PIZZA) {\n                PIZZA pizza = (PIZZA) obj;\n                return this.f3495a == pizza.f3495a && i.a(this.f3496b, pizza.f3496b) && i.a(this.c, pizza.c);\n            }\n            return false;\n        }\n\n        public final String getName() {\n            return this.c;\n        }\n\n        public final int getQuantity() {\n            return this.f3495a;\n        }\n\n        public final String getSize() {\n            return this.f3496b;\n        }\n\n        public int hashCode() {\n            int hashCode = this.f3496b.hashCode();\n            return this.c.hashCode() + ((hashCode + (Integer.hashCode(this.f3495a) * 31)) * 31);\n        }\n\n        public String toString() {\n            StringBuilder e5 = e.e(\"PIZZA(quantity=\");\n            e5.append(this.f3495a);\n            e5.append(\", size=\");\n            e5.append(this.f3496b);\n            e5.append(\", name=\");\n            e5.append(this.c);\n            e5.append(')');\n            return e5.toString();\n        }\n    }\n\n    public Menu() {\n    }\n\n    public  Menu(i4.e eVar) {\n        this();\n    }\n}\n"
+  },
+  {
+    "source": "class Mutex {\n\n    private val state = AtomicInteger(-1)\n    private val waiters = ConcurrentLinkedQueue<Waiter>()\n\n    suspend fun lock() {\n        if (state.compareAndSet(-1, 0)) return\n       \n        return suspendCoroutineUninterceptedOrReturn sc@ { uc ->\n            val waiter = Waiter(uc.intercepted())\n            waiters.add(waiter)\n            loop@ while (true) {\n                val curState = state.get()\n                if (curState == -1) {\n                    if (state.compareAndSet(-1, 0)) {\n                        waiter.resumed = true\n                        return@sc Unit\n\n                    }\n                } else {\n                    check(curState >= 0)\n                    if (state.compareAndSet(curState, curState + 1)) {\n                        break@loop\n                    }\n                }\n            }\n            COROUTINE_SUSPENDED\n        }\n    }\n\n    fun unlock() {\n        while (true) {\n           \n            val curState = state.get()\n            if (curState == 0) {\n               \n               \n                if (state.compareAndSet(0, -1))\n                    return\n            } else {\n                check(curState >= 1)\n               \n                if (state.compareAndSet(curState, curState - 1)) {\n                   \n                    retrieveWaiter()!!.c.resume(Unit)\n                    return\n                }\n            }\n        }\n    }\n\n    private fun retrieveWaiter(): Waiter? {\n        while (true) {\n            val waiter = waiters.poll() ?: return null\n           \n            if (!waiter.resumed)\n                return waiter\n           \n        }\n    }\n\n    private class Waiter(val c: Continuation<Unit>) {\n        var resumed = false\n    }\n}",
+    "decompiled": "public final class Mutex {\n\n    \n    public final AtomicInteger f3497a = new AtomicInteger(-1);\n\n    \n    public final ConcurrentLinkedQueue<a> f3498b = new ConcurrentLinkedQueue<>();\n\n    \n    public static final class a {\n\n        \n        public final d<m> f3499a;\n\n        \n        public boolean f3500b;\n\n        \n        public a(d<? super m> dVar) {\n            this.f3499a = dVar;\n        }\n    }\n\n    \n    \n    \n    \n    \n    \n    public final java.lang.Object lock(z3.d<? super v3.m> r8) {\n        \n        throw new UnsupportedOperationException(\"Method not decompiled: com.ptsecurity.deobfuscator.Mutex.lock(z3.d):java.lang.Object\");\n    }\n\n    public final void unlock() {\n        a poll;\n        while (true) {\n            int i5 = this.f3497a.get();\n            boolean z4 = false;\n            if (i5 == 0) {\n                if (this.f3497a.compareAndSet(0, -1)) {\n                    return;\n                }\n            } else {\n                if (i5 >= 1) {\n                    z4 = true;\n                }\n                if (z4) {\n                    if (this.f3497a.compareAndSet(i5, i5 - 1)) {\n                        while (true) {\n                            poll = this.f3498b.poll();\n                            if (poll == null) {\n                                poll = null;\n                                break;\n                            } else if (!poll.f3500b) {\n                                break;\n                            }\n                        }\n                        i.b(poll);\n                        poll.f3499a.resumeWith(m.f5692a);\n                        return;\n                    }\n                } else {\n                    throw new IllegalStateException(\"Check failed.\".toString());\n                }\n            }\n        }\n    }\n}\n"
+  },
+  {
+    "source": "class MyClass {\n    companion object : KProperty<MyClass> {\n        fun create(): MyClass = MyClass()\n    }\n}",
+    "decompiled": "public final class MyClass {\n    public static final Companion Companion = new Companion(null);\n\n    \n    public static final class Companion implements KProperty<MyClass> {\n        public Companion() {\n        }\n\n        public  Companion(e eVar) {\n            this();\n        }\n\n        public final MyClass create() {\n            return new MyClass();\n        }\n    }\n}\n"
+  },
+  {
+    "source": "public class MyTest {\n    lateinit var subject: Rectangle\n\n    private var _table: Map<String, Int>? = null\n    public val table: Map<String, Int>\n        get() {\n            if (_table == null) {\n                _table = HashMap()\n            }\n            return _table ?: throw AssertionError(\"Set to null by another thread\")\n        }\n}",
+    "decompiled": "public final class MyTest {\n\n    \n    public HashMap f3501a;\n    public Rectangle subject;\n\n    public final Rectangle getSubject() {\n        Rectangle rectangle = this.subject;\n        if (rectangle != null) {\n            return rectangle;\n        }\n        i.i(\"subject\");\n        throw null;\n    }\n\n    public final Map<String, Integer> getTable() {\n        if (this.f3501a == null) {\n            this.f3501a = new HashMap();\n        }\n        HashMap hashMap = this.f3501a;\n        if (hashMap != null) {\n            return hashMap;\n        }\n        throw new AssertionError(\"Set to null by another thread\");\n    }\n\n    public final void setSubject(Rectangle rectangle) {\n        i.e(\"<set-?>\", rectangle);\n        this.subject = rectangle;\n    }\n}\n"
+  },
+  {
+    "source": "class Nama {\n    fun <T> flow(\n        block: suspend FlowCollector<T>.() -> Unit\n    ) {\n        flow {\n            for (i in 1..3) {\n                delay(100)\n                println(\"Emit $i\")\n                emit(i)\n            }\n        }\n    }\n}",
+    "decompiled": "public final class Nama {\n\n    @e(c = \"com.ptsecurity.deobfuscator.Nama$flow$1\", f = \"Nama.kt\", l = {15, 17}, m = \"invokeSuspend\")\n    \n    public static final class a extends g implements p<d<? super Integer>, z3.d<? super m>, Object> {\n\n        \n        public int f3502g;\n\n        \n        public int f3503h;\n\n        \n        public  Object f3504i;\n\n        public a(z3.d<? super a> dVar) {\n            super(dVar);\n        }\n\n        @Override\n        public final z3.d<m> create(Object obj, z3.d<?> dVar) {\n            a aVar = new a(dVar);\n            aVar.f3504i = obj;\n            return aVar;\n        }\n\n        @Override\n        public final Object d(d<? super Integer> dVar, z3.d<? super m> dVar2) {\n            return ((a) create(dVar, dVar2)).invokeSuspend(m.f5692a);\n        }\n\n        \n        \n        \n        \n        \n        @Override\n        \n        public final java.lang.Object invokeSuspend(java.lang.Object r9) {\n            \n            throw new UnsupportedOperationException(\"Method not decompiled: com.ptsecurity.deobfuscator.Nama.a.invokeSuspend(java.lang.Object):java.lang.Object\");\n        }\n    }\n\n    public final <T> void flow(p<? super d<? super T>, ? super z3.d<? super m>, ? extends Object> pVar) {\n        i.e(\"block\", pVar);\n        flow(new a(null));\n    }\n}\n"
+  },
+  {
+    "source": "value class Name(val s: String) {\n    init {\n        require(s.length > 0) { }\n    }\n\n    val length: Int\n        get() = s.length\n\n    fun greet() {\n        println(\"Hello, $s\")\n    }\n}\n",
+    "decompiled": "public final class Name {\n\n    \n    public final String f3505a;\n\n    public  Name(String str) {\n        this.f3505a = str;\n    }\n\n    \n    public static final  Name m0boximpl(String str) {\n        return new Name(str);\n    }\n\n    \n    public static String m1constructorimpl(String str) {\n        i.e(\"s\", str);\n        if (str.length() > 0) {\n            return str;\n        }\n        throw new IllegalArgumentException(\"kotlin.Unit\");\n    }\n\n    \n    public static boolean m2equalsimpl(String str, Object obj) {\n        return (obj instanceof Name) && i.a(str, ((Name) obj).m8unboximpl());\n    }\n\n    \n    public static final boolean m3equalsimpl0(String str, String str2) {\n        return i.a(str, str2);\n    }\n\n    \n    public static final int m4getLengthimpl(String str) {\n        return str.length();\n    }\n\n    \n    public static final void m5greetimpl(String str) {\n        System.out.println((Object) e.c(\"Hello, \", str));\n    }\n\n    \n    public static int m6hashCodeimpl(String str) {\n        return str.hashCode();\n    }\n\n    \n    public static String m7toStringimpl(String str) {\n        return \"Name(s=\" + str + ')';\n    }\n\n    public boolean equals(Object obj) {\n        return m2equalsimpl(this.f3505a, obj);\n    }\n\n    public final String getS() {\n        return this.f3505a;\n    }\n\n    public int hashCode() {\n        return m6hashCodeimpl(this.f3505a);\n    }\n\n    public String toString() {\n        return m7toStringimpl(this.f3505a);\n    }\n\n    \n    public final  String m8unboximpl() {\n        return this.f3505a;\n    }\n}\n"
+  },
+  {
+    "source": "class NewGameInput {\n    private val MAPS_FILEPATH = \"nyethack.maps\"\n    fun load() = File(MAPS_FILEPATH).readBytes()\n}",
+    "decompiled": "public final class NewGameInput {\n\n    \n    public final String f3506a = \"nyethack.maps\";\n\n    public final byte[] load() {\n        File file = new File(this.f3506a);\n        FileInputStream fileInputStream = new FileInputStream(file);\n        try {\n            long length = file.length();\n            if (length <= 2147483647L) {\n                int i5 = (int) length;\n                byte[] bArr = new byte[i5];\n                int i6 = i5;\n                int i7 = 0;\n                while (i6 > 0) {\n                    int read = fileInputStream.read(bArr, i7, i6);\n                    if (read < 0) {\n                        break;\n                    }\n                    i6 -= read;\n                    i7 += read;\n                }\n                if (i6 > 0) {\n                    bArr = Arrays.copyOf(bArr, i7);\n                    i.d(\"copyOf(this, newSize)\", bArr);\n                } else {\n                    int read2 = fileInputStream.read();\n                    if (read2 != -1) {\n                        a aVar = new a();\n                        aVar.write(read2);\n                        byte[] bArr2 = new byte[8192];\n                        for (int read3 = fileInputStream.read(bArr2); read3 >= 0; read3 = fileInputStream.read(bArr2)) {\n                            aVar.write(bArr2, 0, read3);\n                        }\n                        int size = aVar.size() + i5;\n                        if (size >= 0) {\n                            byte[] a5 = aVar.a();\n                            bArr = Arrays.copyOf(bArr, size);\n                            i.d(\"copyOf(this, newSize)\", bArr);\n                            System.arraycopy(a5, 0, bArr, i5, aVar.size() - 0);\n                        } else {\n                            throw new OutOfMemoryError(\"File \" + file + \" is too big to fit in memory.\");\n                        }\n                    }\n                }\n                d.c(fileInputStream, null);\n                return bArr;\n            }\n            throw new OutOfMemoryError(\"File \" + file + \" is too big (\" + length + \" bytes) to fit in memory.\");\n        } catch (Throwable th) {\n            try {\n                throw th;\n            } catch (Throwable th2) {\n                d.c(fileInputStream, th);\n                throw th2;\n            }\n        }\n    }\n}\n"
+  },
+  {
+    "source": "interface NewsApi {\n    suspend fun fetchLatestNews(): List<ArticleHeadline>\n}",
+    "decompiled": "public interface NewsApi {\n    Object fetchLatestNews(d<? super List<ArticleHeadline>> dVar);\n}\n"
+  },
+  {
+    "source": "class NewsRemoteDataSource(\n    private val newsApi: NewsApi,\n    private val refreshIntervalMs: Long = 5000\n) {\n    val latestNews: Flow<List<ArticleHeadline>> = flow {\n        while(true) {\n            val latestNews = newsApi.fetchLatestNews()\n            emit(latestNews)\n            delay(refreshIntervalMs)\n        }\n    }\n}",
+    "decompiled": "public final class NewsRemoteDataSource {\n\n    \n    public final NewsApi f3507a;\n\n    \n    public final long f3508b;\n    public final l c;\n\n    @e(c = \"com.ptsecurity.deobfuscator.NewsRemoteDataSource$latestNews$1\", f = \"NewsRemoteDataSource.kt\", l = {13, 14, 15}, m = \"invokeSuspend\")\n    \n    public static final class a extends g implements p<d<? super List<? extends ArticleHeadline>>, z3.d<? super m>, Object> {\n\n        \n        public int f3509g;\n\n        \n        public  Object f3510h;\n\n        public a(z3.d<? super a> dVar) {\n            super(dVar);\n        }\n\n        @Override\n        public final z3.d<m> create(Object obj, z3.d<?> dVar) {\n            a aVar = new a(dVar);\n            aVar.f3510h = obj;\n            return aVar;\n        }\n\n        @Override\n        public final Object d(d<? super List<? extends ArticleHeadline>> dVar, z3.d<? super m> dVar2) {\n            return ((a) create(dVar, dVar2)).invokeSuspend(m.f5692a);\n        }\n\n        \n        \n        \n        \n        \n        \n        @Override\n        \n        public final java.lang.Object invokeSuspend(java.lang.Object r10) {\n            \n            throw new UnsupportedOperationException(\"Method not decompiled: com.ptsecurity.deobfuscator.NewsRemoteDataSource.a.invokeSuspend(java.lang.Object):java.lang.Object\");\n        }\n    }\n\n    public NewsRemoteDataSource(NewsApi newsApi, long j5) {\n        i.e(\"newsApi\", newsApi);\n        this.f3507a = newsApi;\n        this.f3508b = j5;\n        this.c = new l(new a(null));\n    }\n\n    public final c<List<ArticleHeadline>> getLatestNews() {\n        return this.c;\n    }\n\n    public  NewsRemoteDataSource(NewsApi newsApi, long j5, int i5, i4.e eVar) {\n        this(newsApi, (i5 & 2) != 0 ? 5000L : j5);\n    }\n}\n"
+  },
+  {
+    "source": "class NewsRepository(\n    private val newsRemoteDataSource: NewsRemoteDataSource,\n    private val userData: UserData\n) {\n\n    val favoriteLatestNews: Flow<List<ArticleHeadline>> =\n        newsRemoteDataSource.latestNews\n            .onEach { news ->  }\n}",
+    "decompiled": "public final class NewsRepository {\n\n    \n    public final h f3512a;\n\n    @e(c = \"com.ptsecurity.deobfuscator.NewsRepository$favoriteLatestNews$1\", f = \"NewsRepository.kt\", l = {}, m = \"invokeSuspend\")\n    \n    public static final class a extends g implements p<List<? extends ArticleHeadline>, d<? super m>, Object> {\n        public a(d<? super a> dVar) {\n            super(dVar);\n        }\n\n        @Override\n        public final d<m> create(Object obj, d<?> dVar) {\n            return new a(dVar);\n        }\n\n        @Override\n        public final Object d(List<? extends ArticleHeadline> list, d<? super m> dVar) {\n            a aVar = new a(dVar);\n            m mVar = m.f5692a;\n            aVar.invokeSuspend(mVar);\n            return mVar;\n        }\n\n        @Override\n        public final Object invokeSuspend(Object obj) {\n            androidx.activity.m.I(obj);\n            return m.f5692a;\n        }\n    }\n\n    public NewsRepository(NewsRemoteDataSource newsRemoteDataSource, UserData userData) {\n        i.e(\"newsRemoteDataSource\", newsRemoteDataSource);\n        i.e(\"userData\", userData);\n        this.f3512a = new h(newsRemoteDataSource.getLatestNews(), new a(null));\n    }\n\n    public final c<List<ArticleHeadline>> getFavoriteLatestNews() {\n        return this.f3512a;\n    }\n}\n"
+  },
+  {
+    "source": "sealed class Only{\n    object LOADING: Only()\n    data class SUCCESS(val viewData: Array<Any>): Only()\n    sealed class ERROR: Only() {\n        class InternalError(val errormessage: java.lang.InternalError): ERROR()\n        class UnknownError(val errormessage: java.lang.UnknownError): ERROR()\n    }\n}",
+    "decompiled": "public abstract class Only {\n\n    \n    public static abstract class ERROR extends Only {\n\n        \n        public static final class InternalError extends ERROR {\n\n            \n            public final java.lang.InternalError f3513a;\n\n            \n            public InternalError(java.lang.InternalError internalError) {\n                super(null);\n                i.e(\"errormessage\", internalError);\n                this.f3513a = internalError;\n            }\n\n            public final java.lang.InternalError getErrormessage() {\n                return this.f3513a;\n            }\n        }\n\n        \n        public static final class UnknownError extends ERROR {\n\n            \n            public final java.lang.UnknownError f3514a;\n\n            \n            public UnknownError(java.lang.UnknownError unknownError) {\n                super(null);\n                i.e(\"errormessage\", unknownError);\n                this.f3514a = unknownError;\n            }\n\n            public final java.lang.UnknownError getErrormessage() {\n                return this.f3514a;\n            }\n        }\n\n        public ERROR() {\n            super(null);\n        }\n\n        public  ERROR(e eVar) {\n            this();\n        }\n    }\n\n    \n    public static final class LOADING extends Only {\n        public static final LOADING INSTANCE = new LOADING();\n\n        public LOADING() {\n            super(null);\n        }\n    }\n\n    \n    public static final class SUCCESS extends Only {\n\n        \n        public final Object[] f3515a;\n\n        \n        public SUCCESS(Object[] objArr) {\n            super(null);\n            i.e(\"viewData\", objArr);\n            this.f3515a = objArr;\n        }\n\n        public static  SUCCESS copy$default(SUCCESS success, Object[] objArr, int i5, Object obj) {\n            if ((i5 & 1) != 0) {\n                objArr = success.f3515a;\n            }\n            return success.copy(objArr);\n        }\n\n        public final Object[] component1() {\n            return this.f3515a;\n        }\n\n        public final SUCCESS copy(Object[] objArr) {\n            i.e(\"viewData\", objArr);\n            return new SUCCESS(objArr);\n        }\n\n        public boolean equals(Object obj) {\n            if (this == obj) {\n                return true;\n            }\n            return (obj instanceof SUCCESS) && i.a(this.f3515a, ((SUCCESS) obj).f3515a);\n        }\n\n        public final Object[] getViewData() {\n            return this.f3515a;\n        }\n\n        public int hashCode() {\n            return Arrays.hashCode(this.f3515a);\n        }\n\n        public String toString() {\n            StringBuilder e5 = androidx.activity.e.e(\"SUCCESS(viewData=\");\n            e5.append(Arrays.toString(this.f3515a));\n            e5.append(')');\n            return e5.toString();\n        }\n    }\n\n    public Only() {\n    }\n\n    public  Only(e eVar) {\n        this();\n    }\n}\n"
+  },
+  {
+    "source": "class Outer {\n    private val bar: Int = 1\n    class Nested {\n        fun foo() = 2\n    }\n\n    interface KProperty\n}",
+    "decompiled": "public final class Outer {\n\n    \n    public interface KProperty {\n    }\n\n    \n    public static final class Nested {\n        public final int foo() {\n            return 2;\n        }\n    }\n}\n"
+  },
+  {
+    "source": "class Outer1 {\n    private val bar: Int = 1\n    inner class Inner {\n        fun foo() = bar\n    }\n}",
+    "decompiled": "public final class Outer1 {\n\n    \n    public final int f3516a = 1;\n\n    \n    public final class Inner {\n        public Inner() {\n        }\n\n        public final int foo() {\n            return Outer1.this.f3516a;\n        }\n    }\n}\n"
+  },
+  {
+    "source": "abstract class Person {\n\n    var age: Int = 40\n\n    fun displaySSN(ssn: Int) {\n        println(\"My SSN is $ssn.\")\n    }\n\n    abstract fun displayJob(description: String)\n}",
+    "decompiled": "public abstract class Person {\n\n    \n    public int f3518a = 40;\n\n    public abstract void displayJob(String str);\n\n    public final void displaySSN(int i5) {\n        System.out.println((Object) (\"My SSN is \" + i5 + '.'));\n    }\n\n    public final int getAge() {\n        return this.f3518a;\n    }\n\n    public final void setAge(int i5) {\n        this.f3518a = i5;\n    }\n}\n"
+  },
+  {
+    "source": "open class Person123 constructor(val name: String, val age: Int? = null)",
+    "decompiled": "public class Person123 {\n\n    \n    public final String f3519a;\n\n    \n    public final Integer f3520b;\n\n    public Person123(String str, Integer num) {\n        i.e(\"name\", str);\n        this.f3519a = str;\n        this.f3520b = num;\n    }\n\n    public final Integer getAge() {\n        return this.f3520b;\n    }\n\n    public final String getName() {\n        return this.f3519a;\n    }\n\n    public  Person123(String str, Integer num, int i5, e eVar) {\n        this(str, (i5 & 2) != 0 ? null : num);\n    }\n}\n"
+  },
+  {
+    "source": "class Person14 (val firstName: String, val lastName: String, var isEmployed: Boolean = true)",
+    "decompiled": "public final class Person14 {\n\n    \n    public final String f3521a;\n\n    \n    public final String f3522b;\n    public boolean c;\n\n    public Person14(String str, String str2, boolean z4) {\n        i.e(\"firstName\", str);\n        i.e(\"lastName\", str2);\n        this.f3521a = str;\n        this.f3522b = str2;\n        this.c = z4;\n    }\n\n    public final String getFirstName() {\n        return this.f3521a;\n    }\n\n    public final String getLastName() {\n        return this.f3522b;\n    }\n\n    public final boolean isEmployed() {\n        return this.c;\n    }\n\n    public final void setEmployed(boolean z4) {\n        this.c = z4;\n    }\n\n    public  Person14(String str, String str2, boolean z4, int i5, e eVar) {\n        this(str, str2, (i5 & 4) != 0 ? true : z4);\n    }\n}\n"
+  },
+  {
+    "source": "internal class PersonJava {\n    val name: String\n    val age: Int?\n\n    constructor(name: String) {\n        this.name = name\n        age = null\n    }\n\n    constructor(name: String, age: Int?) {\n        this.name = name\n        this.age = age\n    }\n}",
+    "decompiled": "public final class PersonJava {\n\n    \n    public final String f3523a;\n\n    \n    public final Integer f3524b;\n\n    public PersonJava(String str) {\n        i.e(\"name\", str);\n        this.f3523a = str;\n        this.f3524b = null;\n    }\n\n    public final Integer getAge() {\n        return this.f3524b;\n    }\n\n    public final String getName() {\n        return this.f3523a;\n    }\n\n    public PersonJava(String str, Integer num) {\n        i.e(\"name\", str);\n        this.f3523a = str;\n        this.f3524b = num;\n    }\n}\n"
+  },
+  {
+    "source": "open class Pir(val name: String = \"\") {\n    inline fun execute(action: () -> Unit) {\n        action()\n    }\n\n    inline fun executeAll(action1: () -> Unit, noinline action2: () -> Unit) {\n        action1()\n        action2()\n    }\n}",
+    "decompiled": "public class Pir {\n\n    \n    public final String f3525a;\n\n    public Pir() {\n        this(null, 1, null);\n    }\n\n    public Pir(String str) {\n        i.e(\"name\", str);\n        this.f3525a = str;\n    }\n\n    public final void execute(a<m> aVar) {\n        i.e(\"action\", aVar);\n        aVar.m();\n    }\n\n    public final void executeAll(a<m> aVar, a<m> aVar2) {\n        i.e(\"action1\", aVar);\n        i.e(\"action2\", aVar2);\n        aVar.m();\n        aVar2.m();\n    }\n\n    public final String getName() {\n        return this.f3525a;\n    }\n\n    public  Pir(String str, int i5, e eVar) {\n        this((i5 & 1) != 0 ? \"\" : str);\n    }\n}\n"
+  },
+  {
+    "source": "class PremadeWorldMap {\n\n    companion object {\n\n        val age = 11\n\n        fun bar() {\n            println(\"Companion object called\")\n        }\n    }\n}\n",
+    "decompiled": "public final class PremadeWorldMap {\n    public static final Companion Companion = new Companion(null);\n\n    \n    public static final int f3526a = 11;\n\n    \n    public static final class Companion {\n        public Companion() {\n        }\n\n        public  Companion(e eVar) {\n            this();\n        }\n\n        public final void bar() {\n            System.out.println((Object) \"Companion object called\");\n        }\n\n        public final int getAge() {\n            return PremadeWorldMap.f3526a;\n        }\n    }\n}\n"
+  },
+  {
+    "source": "sealed class ReadResult {\n    data class Number(val value: Int): ReadResult()\n    data class Text(val value: String): ReadResult()\n}\n",
+    "decompiled": "public abstract class ReadResult {\n\n    \n    public static final class Number extends ReadResult {\n\n        \n        public final int f3527a;\n\n        public Number(int i5) {\n            super(null);\n            this.f3527a = i5;\n        }\n\n        public static  Number copy$default(Number number, int i5, int i6, Object obj) {\n            if ((i6 & 1) != 0) {\n                i5 = number.f3527a;\n            }\n            return number.copy(i5);\n        }\n\n        public final int component1() {\n            return this.f3527a;\n        }\n\n        public final Number copy(int i5) {\n            return new Number(i5);\n        }\n\n        public boolean equals(Object obj) {\n            if (this == obj) {\n                return true;\n            }\n            return (obj instanceof Number) && this.f3527a == ((Number) obj).f3527a;\n        }\n\n        public final int getValue() {\n            return this.f3527a;\n        }\n\n        public int hashCode() {\n            return Integer.hashCode(this.f3527a);\n        }\n\n        public String toString() {\n            StringBuilder e5 = e.e(\"Number(value=\");\n            e5.append(this.f3527a);\n            e5.append(')');\n            return e5.toString();\n        }\n    }\n\n    \n    public static final class Text extends ReadResult {\n\n        \n        public final String f3528a;\n\n        \n        public Text(String str) {\n            super(null);\n            i.e(\"value\", str);\n            this.f3528a = str;\n        }\n\n        public static  Text copy$default(Text text, String str, int i5, Object obj) {\n            if ((i5 & 1) != 0) {\n                str = text.f3528a;\n            }\n            return text.copy(str);\n        }\n\n        public final String component1() {\n            return this.f3528a;\n        }\n\n        public final Text copy(String str) {\n            i.e(\"value\", str);\n            return new Text(str);\n        }\n\n        public boolean equals(Object obj) {\n            if (this == obj) {\n                return true;\n            }\n            return (obj instanceof Text) && i.a(this.f3528a, ((Text) obj).f3528a);\n        }\n\n        public final String getValue() {\n            return this.f3528a;\n        }\n\n        public int hashCode() {\n            return this.f3528a.hashCode();\n        }\n\n        public String toString() {\n            StringBuilder e5 = e.e(\"Text(value=\");\n            e5.append(this.f3528a);\n            e5.append(')');\n            return e5.toString();\n        }\n    }\n\n    public ReadResult() {\n    }\n\n    public  ReadResult(i4.e eVar) {\n        this();\n    }\n}\n"
+  },
+  {
+    "source": "class Rectangle(val width: Int, val height: Int) {\n    val area: Int\n        get() = this.width * this.height\n\n    var setterVisibility: String = \"abc\"\n        private set\n\n    var counter = 0\n        set(value) {\n            if (value >= 0)\n                field = value\n        }\n}",
+    "decompiled": "public final class Rectangle {\n\n    \n    public final int f3529a;\n\n    \n    public final int f3530b;\n    public String c = \"abc\";\n\n    \n    public int f3531d;\n\n    public Rectangle(int i5, int i6) {\n        this.f3529a = i5;\n        this.f3530b = i6;\n    }\n\n    public final int getArea() {\n        return this.f3529a * this.f3530b;\n    }\n\n    public final int getCounter() {\n        return this.f3531d;\n    }\n\n    public final int getHeight() {\n        return this.f3530b;\n    }\n\n    public final String getSetterVisibility() {\n        return this.c;\n    }\n\n    public final int getWidth() {\n        return this.f3529a;\n    }\n\n    public final void setCounter(int i5) {\n        if (i5 >= 0) {\n            this.f3531d = i5;\n        }\n    }\n}\n"
+  },
+  {
+    "source": "abstract class ResultState{\n    object LOADING: ResultState()\n    data class SUCCESS(val viewData: Array<Any>): ResultState()\n    data class ERROR(val errormessage: Throwable?): ResultState()\n}",
+    "decompiled": "public abstract class ResultState {\n\n    \n    public static final class ERROR extends ResultState {\n\n        \n        public final Throwable f3532a;\n\n        public ERROR(Throwable th) {\n            this.f3532a = th;\n        }\n\n        public static  ERROR copy$default(ERROR error, Throwable th, int i5, Object obj) {\n            if ((i5 & 1) != 0) {\n                th = error.f3532a;\n            }\n            return error.copy(th);\n        }\n\n        public final Throwable component1() {\n            return this.f3532a;\n        }\n\n        public final ERROR copy(Throwable th) {\n            return new ERROR(th);\n        }\n\n        public boolean equals(Object obj) {\n            if (this == obj) {\n                return true;\n            }\n            return (obj instanceof ERROR) && i.a(this.f3532a, ((ERROR) obj).f3532a);\n        }\n\n        public final Throwable getErrormessage() {\n            return this.f3532a;\n        }\n\n        public int hashCode() {\n            Throwable th = this.f3532a;\n            if (th == null) {\n                return 0;\n            }\n            return th.hashCode();\n        }\n\n        public String toString() {\n            StringBuilder e5 = e.e(\"ERROR(errormessage=\");\n            e5.append(this.f3532a);\n            e5.append(')');\n            return e5.toString();\n        }\n    }\n\n    \n    public static final class LOADING extends ResultState {\n        public static final LOADING INSTANCE = new LOADING();\n    }\n\n    \n    public static final class SUCCESS extends ResultState {\n\n        \n        public final Object[] f3533a;\n\n        public SUCCESS(Object[] objArr) {\n            i.e(\"viewData\", objArr);\n            this.f3533a = objArr;\n        }\n\n        public static  SUCCESS copy$default(SUCCESS success, Object[] objArr, int i5, Object obj) {\n            if ((i5 & 1) != 0) {\n                objArr = success.f3533a;\n            }\n            return success.copy(objArr);\n        }\n\n        public final Object[] component1() {\n            return this.f3533a;\n        }\n\n        public final SUCCESS copy(Object[] objArr) {\n            i.e(\"viewData\", objArr);\n            return new SUCCESS(objArr);\n        }\n\n        public boolean equals(Object obj) {\n            if (this == obj) {\n                return true;\n            }\n            return (obj instanceof SUCCESS) && i.a(this.f3533a, ((SUCCESS) obj).f3533a);\n        }\n\n        public final Object[] getViewData() {\n            return this.f3533a;\n        }\n\n        public int hashCode() {\n            return Arrays.hashCode(this.f3533a);\n        }\n\n        public String toString() {\n            StringBuilder e5 = e.e(\"SUCCESS(viewData=\");\n            e5.append(Arrays.toString(this.f3533a));\n            e5.append(')');\n            return e5.toString();\n        }\n    }\n}\n"
+  },
+  {
+    "source": "open class Room(val name: String) {\n    protected open val dangerLevel = 5\n    fun description() = \"Room: $name\\n\" +\n            \"Danger level: $dangerLevel\"\n    open fun load() = \"Nothing much to see here...\"\n}\n\n",
+    "decompiled": "public class Room {\n\n    \n    public final String f3534a;\n\n    \n    public final int f3535b;\n\n    public Room(String str) {\n        i.e(\"name\", str);\n        this.f3534a = str;\n        this.f3535b = 5;\n    }\n\n    public final String description() {\n        StringBuilder e5 = e.e(\"Room: \");\n        e5.append(this.f3534a);\n        e5.append(\"\\nDanger level: \");\n        e5.append(getDangerLevel());\n        return e5.toString();\n    }\n\n    public int getDangerLevel() {\n        return this.f3535b;\n    }\n\n    public final String getName() {\n        return this.f3534a;\n    }\n\n    public String load() {\n        return \"Nothing much to see here...\";\n    }\n}\n"
+  },
+  {
+    "source": "sealed class SealedClass {\n    class One(val value: Int) : SealedClass()\n    class Two(val x: Int, val y: Int) : SealedClass()\n\n    fun eval(e: SealedClass): Int =\n        when (e) {\n            is SealedClass.One -> e.value\n            is SealedClass.Two -> e.x + e.y\n        }\n}",
+    "decompiled": "public abstract class SealedClass {\n\n    \n    public static final class One extends SealedClass {\n\n        \n        public final int f3536a;\n\n        public One(int i5) {\n            super(null);\n            this.f3536a = i5;\n        }\n\n        public final int getValue() {\n            return this.f3536a;\n        }\n    }\n\n    \n    public static final class Two extends SealedClass {\n\n        \n        public final int f3537a;\n\n        \n        public final int f3538b;\n\n        public Two(int i5, int i6) {\n            super(null);\n            this.f3537a = i5;\n            this.f3538b = i6;\n        }\n\n        public final int getX() {\n            return this.f3537a;\n        }\n\n        public final int getY() {\n            return this.f3538b;\n        }\n    }\n\n    public SealedClass() {\n    }\n\n    public  SealedClass(e eVar) {\n        this();\n    }\n\n    public final int eval(SealedClass sealedClass) {\n        i.e(\"e\", sealedClass);\n        if (sealedClass instanceof One) {\n            return ((One) sealedClass).getValue();\n        }\n        if (sealedClass instanceof Two) {\n            Two two = (Two) sealedClass;\n            return two.getY() + two.getX();\n        }\n        throw new c();\n    }\n}\n"
+  },
+  {
+    "source": "class SomeTest {\n\n    private val dispatcher = Executors\n        .newSingleThreadExecutor()\n        .asCoroutineDispatcher()\n\n\n    fun testSomeUI() = runBlocking {\n        launch(Dispatchers.Main) {\n           \n        }\n    }\n}",
+    "decompiled": "public final class SomeTest {\n\n    @e(c = \"com.ptsecurity.deobfuscator.SomeTest$testSomeUI$1\", f = \"SomeTest.kt\", l = {}, m = \"invokeSuspend\")\n    \n    public static final class a extends g implements p<z, d<? super u0>, Object> {\n\n        \n        public  Object f3539g;\n\n        @e(c = \"com.ptsecurity.deobfuscator.SomeTest$testSomeUI$1$1\", f = \"SomeTest.kt\", l = {}, m = \"invokeSuspend\")\n        \n        \n        public static final class C0029a extends g implements p<z, d<? super m>, Object> {\n            public C0029a(d<? super C0029a> dVar) {\n                super(dVar);\n            }\n\n            @Override\n            public final d<m> create(Object obj, d<?> dVar) {\n                return new C0029a(dVar);\n            }\n\n            @Override\n            public final Object d(z zVar, d<? super m> dVar) {\n                C0029a c0029a = new C0029a(dVar);\n                m mVar = m.f5692a;\n                c0029a.invokeSuspend(mVar);\n                return mVar;\n            }\n\n            @Override\n            public final Object invokeSuspend(Object obj) {\n                androidx.activity.m.I(obj);\n                return m.f5692a;\n            }\n        }\n\n        public a(d<? super a> dVar) {\n            super(dVar);\n        }\n\n        @Override\n        public final d<m> create(Object obj, d<?> dVar) {\n            a aVar = new a(dVar);\n            aVar.f3539g = obj;\n            return aVar;\n        }\n\n        @Override\n        public final Object d(z zVar, d<? super u0> dVar) {\n            return ((a) create(zVar, dVar)).invokeSuspend(m.f5692a);\n        }\n\n        @Override\n        public final Object invokeSuspend(Object obj) {\n            androidx.activity.m.I(obj);\n            c cVar = h0.f5030a;\n            return q4.e.b((z) this.f3539g, l.f5718a, new C0029a(null), 2);\n        }\n    }\n\n    public SomeTest() {\n        ExecutorService newSingleThreadExecutor = Executors.newSingleThreadExecutor();\n        i.d(\"newSingleThreadExecutor()\", newSingleThreadExecutor);\n        new p0(newSingleThreadExecutor);\n    }\n\n    public final u0 testSomeUI() {\n        return (u0) q4.e.c(z3.g.c, new a(null));\n    }\n}\n"
+  },
+  {
+    "source": "interface Source<out T> {\n    fun nextT(): T\n}",
+    "decompiled": "public interface Source<T> {\n    T nextT();\n}\n"
+  },
+  {
+    "source": "    val a: Byte = -10\n    return a",
+    "decompiled": "        return (byte) -10;"
+  },
+  {
+    "source": "    val a: Byte = -10\n    println(a)",
+    "decompiled": "        System.out.println((Object) (byte) -10);"
+  },
+  {
+    "source": "    val b: Short = 45\n    return b",
+    "decompiled": "        return (short) 45;"
+  },
+  {
+    "source": "    val b: Short = 45\n    println(b)",
+    "decompiled": "        System.out.println((Object) (short) 45);"
+  },
+  {
+    "source": "    val c: Int = -250\n    return c",
+    "decompiled": "        return -250;"
+  },
+  {
+    "source": "    val c: Int = -250\n    println(c)",
+    "decompiled": "        System.out.println(-250);"
+  },
+  {
+    "source": "    val c: Int = 0x0A1\n    return c",
+    "decompiled": "        return 161;"
+  },
+  {
+    "source": "    val c: Int = 0x0A1\n    println(c)",
+    "decompiled": "        System.out.println(161);"
+  },
+  {
+    "source": "    val c: Int = 0b0101\n    return c",
+    "decompiled": "        return 5;"
+  },
+  {
+    "source": "    val c: Int = 0b0101\n    println(c)",
+    "decompiled": "        System.out.println(5);"
+  },
+  {
+    "source": "    val c: Int = 1_000_000\n    return c",
+    "decompiled": "        return 1000000;"
+  },
+  {
+    "source": "    val c: Int = 1_000_000\n    println(c)",
+    "decompiled": "        System.out.println(1000000);"
+  },
+  {
+    "source": "    val c: Long = 0xFF_EC_DE_5E\n    return c",
+    "decompiled": "        return 4293713502L;"
+  },
+  {
+    "source": "    val c: Long = 1234_5678_9012_3456L\n    println(c)",
+    "decompiled": "        System.out.println(1234567890123456L);"
+  },
+  {
+    "source": "    val d: Long = 30000\n    return d",
+    "decompiled": "        return 30000L;"
+  },
+  {
+    "source": "    val d: Long = 30000\n    println(d)",
+    "decompiled": "        System.out.println(30000L);"
+  },
+  {
+    "source": "    val a: UByte = 10U\n    return a",
+    "decompiled": "        return (byte) 10;"
+  },
+  {
+    "source": "    val a: UByte = 10U\n    println(a)",
+    "decompiled": "        System.out.println(new v3.h());"
+  },
+  {
+    "source": "    val b: UShort = 45U\n    return b",
+    "decompiled": "        return (short) 45;"
+  },
+  {
+    "source": "    val b: UShort = 45U\n    println(b)",
+    "decompiled": "        System.out.println(new k());"
+  },
+  {
+    "source": "    val c: UInt = 250U\n    return c",
+    "decompiled": "        return 250;"
+  },
+  {
+    "source": "    val c: UInt = 250U\n    println(c)",
+    "decompiled": "        System.out.println(new v3.i());"
+  },
+  {
+    "source": "    val d: ULong = 30000U\n    return d",
+    "decompiled": "        return 30000L;"
+  },
+  {
+    "source": "    val d: ULong = 30000U\n    println(d)",
+    "decompiled": "        System.out.println(new v3.j());"
+  },
+  {
+    "source": "    val height: Double = 1.78\n    return height",
+    "decompiled": "        return 1.78d;"
+  },
+  {
+    "source": "    val height: Double = 1.78\n    println(height)",
+    "decompiled": "        System.out.println(1.78d);"
+  },
+  {
+    "source": "    val pi: Float = 3.14F\n    return pi",
+    "decompiled": "        return 3.14f;"
+  },
+  {
+    "source": "    val pi: Float = 3.14F\n    println(pi)",
+    "decompiled": "        System.out.println(3.14f);"
+  },
+  {
+    "source": "    val a: Boolean = true\n    return a",
+    "decompiled": "        return true;"
+  },
+  {
+    "source": "    val a: Boolean = true\n    println(a)",
+    "decompiled": "        System.out.println(true);"
+  },
+  {
+    "source": "    val a: Boolean = false\n    return a",
+    "decompiled": "        return false;"
+  },
+  {
+    "source": "    val a: Boolean = false\n    println(a)",
+    "decompiled": "        System.out.println(false);"
+  },
+  {
+    "source": "    val a: Char = 'A'\n    return a",
+    "decompiled": "        return 'A';"
+  },
+  {
+    "source": "    val a: Char = 'A'\n    println(a)",
+    "decompiled": "        System.out.println('A');"
+  },
+  {
+    "source": "    val a: Char = '\\t'\n    return a",
+    "decompiled": "        return '\\t';"
+  },
+  {
+    "source": "    val a: Char = '\\t'\n    println(a)",
+    "decompiled": "        System.out.println('\\t');"
+  },
+  {
+    "source": "    val name: String = \"Eugene\"\n    return name",
+    "decompiled": "        return \"Eugene\";"
+  },
+  {
+    "source": "    val name: String = \"AWQ\"\n    println(name)",
+    "decompiled": "        System.out.println((Object) \"AWQ\");"
+  },
+  {
+    "source": "    val name: String = \"\"\"\n                        SALT II was a series of talks between United States\n                        and Soviet negotiators from 1972 to 1979.\n                        It was a continuation of the SALT I talks.\n                    \"\"\"\n    return name",
+    "decompiled": "        return \"\\n                        SALT II was a series of talks between United States\\n                        and Soviet negotiators from 1972 to 1979.\\n                        It was a continuation of the SALT I talks.\\n                    \";"
+  },
+  {
+    "source": "    val name: String = \"\"\"\n                        SALT I was a series of talks between United States\n                        and Soviet negotiators from 1972 to 1979.\n                        It was a continuation of the SALT I talks.\n                    \"\"\"\n    println(name)",
+    "decompiled": "        System.out.println((Object) \"\\n                        SALT I was a series of talks between United States\\n                        and Soviet negotiators from 1972 to 1979.\\n                        It was a continuation of the SALT I talks.\\n                    \");"
+  },
+  {
+    "source": "    val firstName = \"Tom\"\n    val lastName = \"Smith\"\n    val welcome = \"Hello, $firstName $lastName\"\n    return welcome",
+    "decompiled": "        return \"Hello, Tom Smith\";"
+  },
+  {
+    "source": "    val firstName = \"Tom\"\n    val welcome = \"Hello, $firstName $lastName\"\n    return welcome",
+    "decompiled": "        i4.i.e(\"lastName\", str);\n        return \"Hello, Tom \" + str;"
+  },
+  {
+    "source": "    val firstName = \"Tom\"\n    val welcome = \"Hello, $firstName $lastName\"\n    return welcome",
+    "decompiled": "        i4.i.e(\"lastName\", obj);\n        return \"Hello, Tom \" + obj;"
+  },
+  {
+    "source": "    val firstName = \"Tom1\"\n    val lastName = \"Smith1\"\n    val welcome = \"Hello, $firstName $lastName\"\n    println(welcome)",
+    "decompiled": "        System.out.println((Object) \"Hello, Tom1 Smith1\");"
+  },
+  {
+    "source": "    val firstName = \"Tom1\"\n    val welcome = \"Hello, $firstName $lastName\"\n    println(welcome)",
+    "decompiled": "        i4.i.e(\"lastName\", str);\n        System.out.println((Object) (\"Hello, Tom1 \" + str));"
+  },
+  {
+    "source": "    val firstName = \"Tom1\"\n    val welcome = \"Hello, $firstName $lastName\"\n    println(welcome)",
+    "decompiled": "        i4.i.e(\"lastName\", obj);\n        System.out.println((Object) (\"Hello, Tom1 \" + obj));"
+  },
+  {
+    "source": "    val name = \"Tom\"\n    val age = 22\n    val userInfo = \"Your name: $name  Your age: $age\"\n    return userInfo",
+    "decompiled": "        return \"Your name: Tom  Your age: 22\";"
+  },
+  {
+    "source": "    val name = \"Tom\"\n    val userInfo = \"Your name: $name  Your age: $age\"\n    return userInfo",
+    "decompiled": "        return \"Your name: Tom  Your age: \" + i5;"
+  },
+  {
+    "source": "    val name = \"Tom\"\n    val userInfo = \"Your name: $name  Your age: $age\"\n    return userInfo",
+    "decompiled": "        i4.i.e(\"age\", obj);\n        return \"Your name: Tom  Your age: \" + obj;"
+  },
+  {
+    "source": "    val name = \"Tom\"\n    val age = 22\n    val userInfo = \"Your name: $name  Your age: $age\"\n    println(userInfo)",
+    "decompiled": "        System.out.println((Object) \"Your name: Tom  Your age: 22\");"
+  },
+  {
+    "source": "    val i = 10\n    println(\"i = $i\")",
+    "decompiled": "        System.out.println((Object) \"i = 10\");"
+  },
+  {
+    "source": "    val s = \"abc\"\n    return \"$s.length is ${s.length}\"",
+    "decompiled": "        return \"abc.length is 3\";"
+  },
+  {
+    "source": "    val price = \"\"\"\n        ${'$'}_9.99\n                \"\"\"\n    return price",
+    "decompiled": "        return \"\\n        $_9.99\\n                \";"
+  },
+  {
+    "source": "    val str = \"abcd 123\"\n    for (c in str) {\n        println(c)\n    }",
+    "decompiled": "        for (int i5 = 0; i5 < 8; i5++) {\n            System.out.println(\"abcd 123\".charAt(i5));\n        }"
+  },
+  {
+    "source": "    val str = \"abcd 123\".uppercase()\n    return str",
+    "decompiled": "        String upperCase = \"abcd 123\".toUpperCase(Locale.ROOT);\n        i4.i.d(\"this as java.lang.String).toUpperCase(Locale.ROOT)\", upperCase);\n        return upperCase;"
+  },
+  {
+    "source": "    val text = \"\"\"\n    |Tell me and I forget.\n    |Teach me and I remember.\n    |Involve me and I learn.\n    |(Benjamin Franklin)\n    \"\"\".trimMargin()\n    return text",
+    "decompiled": "        return \"Tell me and I forget.\\nTeach me and I remember.\\nInvolve me and I learn.\\n(Benjamin Franklin)\";"
+  },
+  {
+    "source": "    var name: Any = \"Tom\"\n    println(name)\n    name = 6758\n    println(name)",
+    "decompiled": "        System.out.println((Object) \"Tom\");\n        Integer num = 6758;\n        System.out.println(num.intValue());"
+  },
+  {
+    "source": "    var a = 1\n    val s2 = \"${s1.replace(\"=\", \"not equals\")}, but now $a\"",
+    "decompiled": "        i4.i.e(\"s1\", str);\n        int x = o4.j.x(0, str, \"=\", false);\n        if (x >= 0) {\n            int length = (str.length() - 1) + 10;\n            if (length >= 0) {\n                StringBuilder sb = new StringBuilder(length);\n                int i5 = 0;\n                do {\n                    sb.append((CharSequence) str, i5, x);\n                    sb.append(\"not equals\");\n                    i5 = x + 1;\n                    if (x >= str.length()) {\n                        break;\n                    }\n                    x = o4.j.x(x + 1, str, \"=\", false);\n                } while (x > 0);\n                sb.append((CharSequence) str, i5, str.length());\n                i4.i.d(\"stringBuilder.append(this, i, length).toString()\", sb.toString());\n                return;\n            }\n            throw new OutOfMemoryError();\n        }"
+  },
+  {
+    "source": "    val boxedA: Int? = 100\n    return boxedA",
+    "decompiled": "        return 100;"
+  },
+  {
+    "source": "    val a: Int = 100\n    val boxedA: Int? = a\n    return boxedA",
+    "decompiled": "        return 100;"
+  },
+  {
+    "source": "    val a: Int = 100\n    val boxedA: Int? = a\n    val anotherBoxedA: Int? = a\n    return boxedA === anotherBoxedA",
+    "decompiled": "        return true;"
+  },
+  {
+    "source": "    val boxedA: Int? = 10000\n    return boxedA",
+    "decompiled": "        return 10000;"
+  },
+  {
+    "source": "    val a: Int = 10000\n    val boxedA: Int? = a\n    return boxedA",
+    "decompiled": "        return 10000;"
+  },
+  {
+    "source": "    val a: Int = 10000\n    val boxedA: Int? = a\n    val anotherBoxedA: Int? = a\n    return boxedA === anotherBoxedA",
+    "decompiled": "        return true;"
+  },
+  {
+    "source": "    val boxedA: Long? = 10000000\n    return boxedA",
+    "decompiled": "        return 10000000L;"
+  },
+  {
+    "source": "    val a: Long = 10000000\n    val boxedA: Long? = a\n    return boxedA",
+    "decompiled": "        return 10000000L;"
+  },
+  {
+    "source": "    val a: Long = 10000000\n    val boxedA: Long? = a\n    val anotherBoxedA: Long? = a\n    return boxedA === anotherBoxedA",
+    "decompiled": "        return true;"
+  },
+  {
+    "source": "    val a: Int? = 1\n    val b: Long? =\n        a?.toLong()\n    return b",
+    "decompiled": "        return Long.valueOf(1);"
+  },
+  {
+    "source": "    val b: Byte = 1\n    val i1: Int = b.toInt()\n    return i1",
+    "decompiled": "        return 1;"
+  },
+  {
+    "source": "    val b: Short = 1000\n    val i1: Char = b.toChar()\n    return i1",
+    "decompiled": "        return (char) 1000;"
+  },
+  {
+    "source": "    val b: Float = 1000F\n    val i1: Double = b.toDouble()\n    return i1",
+    "decompiled": "        return 1000.0f;"
+  },
+  {
+    "source": "    val b: Int = 1000\n    val i1: Double = b.toDouble()\n    return i1",
+    "decompiled": "        return 1000;"
+  },
+  {
+    "source": "    val b: Double = 1000.0\n    val i1: Char = b.toInt().toChar()\n    return i1",
+    "decompiled": "        return (char) 1000.0d;"
+  },
+  {
+    "source": "    val b: Double = 1000.0\n    val i1: Char? = b.toInt().toChar()\n    return i1",
+    "decompiled": "        return Character.valueOf((char) 1000.0d);"
+  },
+  {
+    "source": "    val i1: Char? = 'b'\n    return i1",
+    "decompiled": "        return 'b';"
+  },
+  {
+    "source": "    val i1: String? = \"as\"\n    return i1",
+    "decompiled": "        return \"as\";"
+  },
+  {
+    "source": "    val a = 1\n    val b = 2\n    return a+b",
+    "decompiled": "        return 3;"
+  },
+  {
+    "source": "    return 1+2",
+    "decompiled": "        return 3;"
+  },
+  {
+    "source": "    val age = 1\n    return 1+age",
+    "decompiled": "        return 2;"
+  },
+  {
+    "source": "    return 1L+2_500_000_000L",
+    "decompiled": "        return 2500000001L;"
+  },
+  {
+    "source": "    val age: Long = 0x0F\n    return 2L+age",
+    "decompiled": "        return 17L;"
+  },
+  {
+    "source": "    val age = 1\n    return 3L+age",
+    "decompiled": "        return 1 + 3;"
+  },
+  {
+    "source": "    val age: Long = 5000\n    return 4+age",
+    "decompiled": "        return 4 + 5000;"
+  },
+  {
+    "source": "    val age = \"D\"\n    return '4'+ age",
+    "decompiled": "        return \"4D\";"
+  },
+  {
+    "source": "    val age = \"E\"\n    return \"4$age\"",
+    "decompiled": "        return \"4E\";"
+  },
+  {
+    "source": "    val age = \"D\"\n    val s = \"saqw\"\n    return s + age",
+    "decompiled": "        return \"saqwD\";"
+  },
+  {
+    "source": "    val age = \"D\"\n    val s = \"saw$age\"\n    return s + age + \"qwe1\"",
+    "decompiled": "        return \"sawDDqwe1\";"
+  },
+  {
+    "source": "    val age = \"D\".toInt()\n    val s = \"saw$age\".toDouble()\n    return s",
+    "decompiled": "        int parseInt = Integer.parseInt(\"D\");\n        return Double.parseDouble(\"saw\" + parseInt);"
+  },
+  {
+    "source": "    val age = \"Q\".toInt()\n    val s = \"saQw$age\".toDouble()\n    return s + age + \"qwQe1\".toFloat()",
+    "decompiled": "        int parseInt = Integer.parseInt(\"Q\");\n        return Double.parseDouble(\"saQw\" + parseInt) + parseInt + Float.parseFloat(\"qwQe1\");"
+  },
+  {
+    "source": "    val s = \"abc\" + 1\n    return s + \"def\"",
+    "decompiled": "        return \"abc1def\";"
+  },
+  {
+    "source": "    val age: Long = 5000\n    return '4'+ age.toInt()",
+    "decompiled": "        return (char) (((int) 5000) + 52);"
+  },
+  {
+    "source": "    return '3' + \"age.toInt()\"",
+    "decompiled": "        return \"3age.toInt()\";"
+  },
+  {
+    "source": "    val a = 1\n    val b = 2\n    return a-b",
+    "decompiled": "        return -1;"
+  },
+  {
+    "source": "    return 1-2",
+    "decompiled": "        return -1;"
+  },
+  {
+    "source": "    val age = 1\n    return 1-age",
+    "decompiled": "        return 0;"
+  },
+  {
+    "source": "    return 1L-2_500_000_000L",
+    "decompiled": "        return -2499999999L;"
+  },
+  {
+    "source": "    val age: Long = 0x0F\n    return 2L-age",
+    "decompiled": "        return -13L;"
+  },
+  {
+    "source": "    val age = 1\n    return 3L-age",
+    "decompiled": "        return 3 - 1;"
+  },
+  {
+    "source": "    val age: Long = 5000\n    return 4-age",
+    "decompiled": "        return 4 - 5000;"
+  },
+  {
+    "source": "    val age = \"D\"\n    return '4'.code - age.toFloat()",
+    "decompiled": "        return 52 - Float.parseFloat(\"D\");"
+  },
+  {
+    "source": "    val age = \"1Q\".toInt()\n    val s = \"s1aQw$age\".toDouble()\n    return s - age - \"q1wQe1\".toFloat()",
+    "decompiled": "        int parseInt = Integer.parseInt(\"1Q\");\n        return (Double.parseDouble(\"s1aQw\" + parseInt) - parseInt) - Float.parseFloat(\"q1wQe1\");"
+  },
+  {
+    "source": "    val age: Long = 5000\n    return '4' - age.toInt()",
+    "decompiled": "        return (char) (52 - ((int) 5000));"
+  },
+  {
+    "source": "    val age: Long = 0b11010010_01101001_10010100_10010010\n    return 4 - age",
+    "decompiled": "        return 4 - 3530134674L;"
+  },
+  {
+    "source": "    val a = 1\n    val b = 2\n    return a/b",
+    "decompiled": "        return 0;"
+  },
+  {
+    "source": "    return 1/2",
+    "decompiled": "        return 0;"
+  },
+  {
+    "source": "    return 1/2",
+    "decompiled": "        return 0L;"
+  },
+  {
+    "source": "    val age = 1\n    return 1/age",
+    "decompiled": "        return 1;"
+  },
+  {
+    "source": "    val age = 1\n    return age/0.0003",
+    "decompiled": "        return 1 / 3.0E-4d;"
+  },
+  {
+    "source": "    return 1L/2_500_000_0000L",
+    "decompiled": "        return 0L;"
+  },
+  {
+    "source": "    val age: Long = 0x0F\n    return 2L/age",
+    "decompiled": "        return 0L;"
+  },
+  {
+    "source": "    val age = 1\n    return age/3L",
+    "decompiled": "        return 1 / 3;"
+  },
+  {
+    "source": "    val age: Long = 5000\n    return 4/age",
+    "decompiled": "        return 4 / 5000;"
+  },
+  {
+    "source": "    val age = \"D\"\n    return '4'.code / age.toFloat()",
+    "decompiled": "        return 52 / Float.parseFloat(\"D\");"
+  },
+  {
+    "source": "    val age = \"12Q\".toInt()\n    val s = \"s1a2Qw$age\".toDouble()\n    return s / age / \"q1w2Qe1\".toFloat()",
+    "decompiled": "        int parseInt = Integer.parseInt(\"12Q\");\n        return (Double.parseDouble(\"s1a2Qw\" + parseInt) / parseInt) / Float.parseFloat(\"q1w2Qe1\");"
+  },
+  {
+    "source": "    val age: Long = 0b11010010_01101001_10010100_10010010\n    return 4 / age",
+    "decompiled": "        return 4 / 3530134674L;"
+  },
+  {
+    "source": "    val a = 1\n    val b = 2\n    return a*b",
+    "decompiled": "        return 2;"
+  },
+  {
+    "source": "    return 1*2",
+    "decompiled": "        return 2;"
+  },
+  {
+    "source": "    return 1*2",
+    "decompiled": "        return 2L;"
+  },
+  {
+    "source": "    return 1*2.0",
+    "decompiled": "        return 2.0d;"
+  },
+  {
+    "source": "    val age = 6\n    return 4*age",
+    "decompiled": "        return 24;"
+  },
+  {
+    "source": "    val age = 1\n    return age*0.0003",
+    "decompiled": "        return 1 * 3.0E-4d;"
+  },
+  {
+    "source": "    return 12135L*2_500_000_0000L",
+    "decompiled": "        return 303375000000000L;"
+  },
+  {
+    "source": "    val age: Long = 0x0F\n    return 2L*age",
+    "decompiled": "        return 30L;"
+  },
+  {
+    "source": "    val age = 132\n    return age*3L",
+    "decompiled": "        return 132 * 3;"
+  },
+  {
+    "source": "    val age: Long = 5000\n    return 4*age",
+    "decompiled": "        return 4 * 5000;"
+  },
+  {
+    "source": "    val age = \"D7\"\n    return \"47\".toInt() * age.toFloat()",
+    "decompiled": "        return Float.parseFloat(\"D7\") * Integer.parseInt(\"47\");"
+  },
+  {
+    "source": "    val age = \"127Q\".toInt()\n    val s = \"s1a72Qw$age\".toDouble()\n    return s * age * \"q1w2Q7e1\".toFloat()",
+    "decompiled": "        int parseInt = Integer.parseInt(\"127Q\");\n        return Double.parseDouble(\"s1a72Qw\" + parseInt) * parseInt * Float.parseFloat(\"q1w2Q7e1\");"
+  },
+  {
+    "source": "    val age: Long = 0b11010010_01101001_10010100_10010010\n    return 4777 * age",
+    "decompiled": "        return 4777 * 3530134674L;"
+  },
+  {
+    "source": "    val a = 134\n    val b = 2433\n    return a% b",
+    "decompiled": "        return 134;"
+  },
+  {
+    "source": "    return 331%2533",
+    "decompiled": "        return 331;"
+  },
+  {
+    "source": "    return 2533%331",
+    "decompiled": "        return 216L;"
+  },
+  {
+    "source": "    return  2533%2.0",
+    "decompiled": "        return 1.0d;"
+  },
+  {
+    "source": "    val age = 6\n    return 4%age",
+    "decompiled": "        return 4;"
+  },
+  {
+    "source": "    val age = 1\n    return age%0.0003",
+    "decompiled": "        return 1 % 3.0E-4d;"
+  },
+  {
+    "source": "    return 12135L%2_500_000_0000L",
+    "decompiled": "        return 12135L;"
+  },
+  {
+    "source": "    val age: Long = 0x0F\n    return 2L%age",
+    "decompiled": "        return 2L;"
+  },
+  {
+    "source": "    val age = 132\n    return age%3L",
+    "decompiled": "        return 132 % 3;"
+  },
+  {
+    "source": "    val age: Long = 5000\n    return 4%age",
+    "decompiled": "        return 4 % 5000;"
+  },
+  {
+    "source": "    val age = \"D7\"\n    return \"47\".toInt() % age.toFloat()",
+    "decompiled": "        return Integer.parseInt(\"47\") % Float.parseFloat(\"D7\");"
+  },
+  {
+    "source": "    val age = \"127Q\".toInt()\n    val s = \"s1a72Qw$age\".toDouble()\n    return s % age % \"q1w2Q7e1\".toFloat()",
+    "decompiled": "        int parseInt = Integer.parseInt(\"127Q\");\n        return (Double.parseDouble(\"s1a72Qw\" + parseInt) % parseInt) % Float.parseFloat(\"q1w2Q7e1\");"
+  },
+  {
+    "source": "    val age: Long = 0b11010010_01101001_10010100_10010010\n    return 4777 % age",
+    "decompiled": "        return 4777 % 3530134674L;"
+  },
+  {
+    "source": "    val b = 200\n    val x = a and b\n    return x",
+    "decompiled": "        return i5 & 200;"
+  },
+  {
+    "source": "    val x: Long = a and b\n    return x",
+    "decompiled": "        return j5 & j6;"
+  },
+  {
+    "source": "    val b: Long = 200000000000000000\n    val x: Long = (a and b.toInt()).toLong()\n    return x",
+    "decompiled": "        return i5 & ((int) 200000000000000000L);"
+  },
+  {
+    "source": "    val b = 2000\n    val x = a or b\n    return x",
+    "decompiled": "        return i5 | 2000;"
+  },
+  {
+    "source": "    val x: Int = a or b\n    return x",
+    "decompiled": "        return i5 | i6;"
+  },
+  {
+    "source": "    val x: Long = (a or b.toInt()).toLong()\n    return x",
+    "decompiled": "        return i5 | ((int) j5);"
+  },
+  {
+    "source": "    val b = 2000\n    val x = a xor b\n    return x",
+    "decompiled": "        return i5 ^ 2000;"
+  },
+  {
+    "source": "    val x: Int = a xor b\n    return x",
+    "decompiled": "        return i5 ^ i6;"
+  },
+  {
+    "source": "    val x: Long = (a xor b.toInt()).toLong()\n    return x",
+    "decompiled": "        return i5 ^ ((int) j5);"
+  },
+  {
+    "source": "    return x shl 5",
+    "decompiled": "        return i5 << 5;"
+  },
+  {
+    "source": "    return a shl b",
+    "decompiled": "        return i5 << i6;"
+  },
+  {
+    "source": "    return a shl b.toInt()",
+    "decompiled": "        return j5 << ((int) j6);"
+  },
+  {
+    "source": "    return x shr 5",
+    "decompiled": "        return i5 >> 5;"
+  },
+  {
+    "source": "    return a shr b",
+    "decompiled": "        return i5 >> i6;"
+  },
+  {
+    "source": "    return a shr b.toInt()",
+    "decompiled": "        return j5 >> ((int) j6);"
+  },
+  {
+    "source": "    return x ushr 5",
+    "decompiled": "        return i5 >>> 5;"
+  },
+  {
+    "source": "    return x ushr y",
+    "decompiled": "        return j5 >>> i5;"
+  },
+  {
+    "source": "    return x ushr y.toInt()",
+    "decompiled": "        return j5 >>> ((int) j6);"
+  },
+  {
+    "source": "    val b: Int = 2000040000\n    return a ushr b",
+    "decompiled": "        return i5 >>> 2000040000;"
+  },
+  {
+    "source": "    return x.inv()",
+    "decompiled": "        return ~i5;"
+  },
+  {
+    "source": "    return !a",
+    "decompiled": "        return !z4;"
+  },
+  {
+    "source": "    return a || b",
+    "decompiled": "        return z4 || z5;"
+  },
+  {
+    "source": "    return a && b",
+    "decompiled": "        return z4 && z5;"
+  },
+  {
+    "source": "    val b: Int = 2000\n    return a == b",
+    "decompiled": "        return i5 == 2000;"
+  },
+  {
+    "source": "    val b: Long? = a\n    return a == b",
+    "decompiled": "        return j5 == j5;"
+  },
+  {
+    "source": "    return a == b",
+    "decompiled": "        i4.i.e(\"a\", obj);\n        i4.i.e(\"b\", obj2);\n        return i4.i.a(obj, obj2);"
+  },
+  {
+    "source": "    val b = \"vb\"\n    return a == b",
+    "decompiled": "        i4.i.e(\"a\", str);\n        return i4.i.a(str, \"vb\");"
+  },
+  {
+    "source": "    return a == 500",
+    "decompiled": "        return i5 != 500;"
+  },
+  {
+    "source": "    val b: Int = 2000\n    return a != b",
+    "decompiled": "        return i5 != 2000;"
+  },
+  {
+    "source": "    val b: Long? = a\n    return a != b",
+    "decompiled": "        return j5 != j5;"
+  },
+  {
+    "source": "    return a != b",
+    "decompiled": "        i4.i.e(\"a\", obj);\n        i4.i.e(\"b\", obj2);\n        return !i4.i.a(obj, obj2);"
+  },
+  {
+    "source": "    val b = \"vb\"\n    return a != b",
+    "decompiled": "        i4.i.e(\"a\", str);\n        return !i4.i.a(str, \"vb\");"
+  },
+  {
+    "source": "    return a != 500",
+    "decompiled": "        return i5 != 500;"
+  },
+  {
+    "source": "    val b: Int = 2000\n    return a >= b",
+    "decompiled": "        return j5 >= ((long) 2000);"
+  },
+  {
+    "source": "    val b: Long = 1000\n    return a >= b",
+    "decompiled": "        return j5 >= 1000;"
+  },
+  {
+    "source": "    val b: Long? = a\n    return a >= b!!",
+    "decompiled": "        return j5 >= j5;"
+  },
+  {
+    "source": "    return a >= b",
+    "decompiled": "        return j5 >= j6;"
+  },
+  {
+    "source": "    return a >= b",
+    "decompiled": "        return ((double) f5) >= d5;"
+  },
+  {
+    "source": "    return a >= 500",
+    "decompiled": "        return j5 >= 500;"
+  },
+  {
+    "source": "    val c = a >= b.toInt().toChar()\n    return c",
+    "decompiled": "        return i4.i.f(c2, (char) ((int) d5)) >= 0;"
+  },
+  {
+    "source": "    val c = a >= b\n    return c",
+    "decompiled": "        return ((double) s5) >= d5;"
+  },
+  {
+    "source": "    val b = \"v22b\"\n    return a >= b",
+    "decompiled": "        i4.i.e(\"a\", str);\n        return str.compareTo(\"v22b\") >= 0;"
+  },
+  {
+    "source": "    val b: Int = 2000\n    return a <= b",
+    "decompiled": "        return j5 <= ((long) 2000);"
+  },
+  {
+    "source": "    val b: Long? = a\n    return a <= b!!",
+    "decompiled": "        return j5 <= j5;"
+  },
+  {
+    "source": "    return a <= b",
+    "decompiled": "        return j5 <= ((long) i5);"
+  },
+  {
+    "source": "    return a <= b",
+    "decompiled": "        return i5 <= i6;"
+  },
+  {
+    "source": "    return a <= b",
+    "decompiled": "        return ((double) f5) <= d5;"
+  },
+  {
+    "source": "    val c = a <= b.toInt().toChar()\n    return c",
+    "decompiled": "        return i4.i.f(c2, (char) ((int) d5)) <= 0;"
+  },
+  {
+    "source": "    val c = a <= b\n    return c",
+    "decompiled": "        return ((double) s5) <= d5;"
+  },
+  {
+    "source": "    val b = \"v223b\"\n    return a <= b",
+    "decompiled": "        i4.i.e(\"a\", str);\n        return str.compareTo(\"v223b\") <= 0;"
+  },
+  {
+    "source": "    val b: Int = 2000\n    return a > b",
+    "decompiled": "        return j5 > ((long) 2000);"
+  },
+  {
+    "source": "    val b: Long? = a\n    return a > b!!",
+    "decompiled": "        return j5 > j5;"
+  },
+  {
+    "source": "    return a > b",
+    "decompiled": "        return j5 > j6;"
+  },
+  {
+    "source": "    val c = a > b.toInt().toChar()\n    return c",
+    "decompiled": "        return i4.i.f(c2, (char) ((int) d5)) > 0;"
+  },
+  {
+    "source": "    val c = a > b\n    return c",
+    "decompiled": "        return ((double) s5) > d5;"
+  },
+  {
+    "source": "    val b = \"v22b\"\n    return a > b",
+    "decompiled": "        i4.i.e(\"a\", str);\n        return str.compareTo(\"v22b\") > 0;"
+  },
+  {
+    "source": "    val b: Int = 2000\n    return a < b",
+    "decompiled": "        return i5 < 2000;"
+  },
+  {
+    "source": "    val b: Long? = a\n    return a < b!!",
+    "decompiled": "        return j5 < j5;"
+  },
+  {
+    "source": "    return a < b",
+    "decompiled": "        return j5 < j6;"
+  },
+  {
+    "source": "    val c = a < b.toInt().toChar()\n    return c",
+    "decompiled": "        return i4.i.f(c2, (char) ((int) d5)) < 0;"
+  },
+  {
+    "source": "    val c = a < b\n    return c",
+    "decompiled": "        return ((double) s5) < d5;"
+  },
+  {
+    "source": "    val b = \"v223b\"\n    return a < b",
+    "decompiled": "        i4.i.e(\"a\", str);\n        return str.compareTo(\"v223b\") < 0;"
+  },
+  {
+    "source": "    return a as Double !in 11.0..23.0",
+    "decompiled": "        i4.i.e(\"a\", obj);\n        double doubleValue = ((Double) obj).doubleValue();\n        boolean z4 = false;\n        if (11.0d <= doubleValue && doubleValue <= 23.0d) {\n            z4 = true;\n        }\n        return !z4;"
+  },
+  {
+    "source": "    return a !in 11..23",
+    "decompiled": "        i4.i.e(\"a\", obj);\n        return !w3.j.O(new l4.j(11, 23), obj);"
+  },
+  {
+    "source": "    return a as Double in 11.0..23.0",
+    "decompiled": "        i4.i.e(\"a\", obj);\n        double doubleValue = ((Double) obj).doubleValue();\n        return 11.0d <= doubleValue && doubleValue <= 23.0d;"
+  },
+  {
+    "source": "    return a as String !in \"qw\"..\"xcv\"",
+    "decompiled": "        i4.i.e(\"a\", obj);\n        String str = (String) obj;\n        boolean z4 = false;\n        if (str.compareTo(\"qw\") >= 0 && str.compareTo(\"xcv\") <= 0) {\n            z4 = true;\n        }\n        return !z4;"
+  },
+  {
+    "source": "    return a as String in \"cv\"..\"dssg\"",
+    "decompiled": "        i4.i.e(\"a\", obj);\n        String str = (String) obj;\n        return str.compareTo(\"cv\") >= 0 && str.compareTo(\"dssg\") <= 0;"
+  },
+  {
+    "source": "    return 11.0..23.0",
+    "decompiled": "        return new l4.d(11.0d);"
+  },
+  {
+    "source": "    return 120.0..23.0",
+    "decompiled": "        return new l4.d(120.0d);"
+  },
+  {
+    "source": "    return 10..23",
+    "decompiled": "        return new l4.j(10, 23);"
+  },
+  {
+    "source": "    return -10..23",
+    "decompiled": "        return new l4.j(-10, 23);"
+  },
+  {
+    "source": "    return 'A'..'z'",
+    "decompiled": "        return new l4.c('A', 'z');"
+  },
+  {
+    "source": "    return \"Aa\"..\"wgwe\"",
+    "decompiled": "        return new l4.g();"
+  },
+  {
+    "source": "    return -10 downTo -100",
+    "decompiled": "        return new l4.h(-10, -100, -1);"
+  },
+  {
+    "source": "    return -11 downTo -1200",
+    "decompiled": "        return new l4.h(-11, -1200, -1);"
+  },
+  {
+    "source": "    return a.compareTo(200000.0)",
+    "decompiled": "        return Double.compare(f5, 200000.0d);"
+  },
+  {
+    "source": "    return a.compareTo(200000.0)",
+    "decompiled": "        return Double.compare(d5, 200000.0d);"
+  },
+  {
+    "source": "    return a.compareTo(NaN)",
+    "decompiled": "        return Double.compare(d5, Double.NaN);"
+  },
+  {
+    "source": "    return a.compareTo(-0.0)",
+    "decompiled": "        return Double.compare(d5, -0.0d);"
+  },
+  {
+    "source": "    return a.compareTo(POSITIVE_INFINITY)",
+    "decompiled": "        return Double.compare(d5, Double.POSITIVE_INFINITY);"
+  },
+  {
+    "source": "    return a.equals(200000.0)",
+    "decompiled": "        return Float.valueOf(f5).equals(Double.valueOf(200000.0d));"
+  },
+  {
+    "source": "    return a.equals(200000.0)",
+    "decompiled": "        return Double.valueOf(d5).equals(Double.valueOf(200000.0d));"
+  },
+  {
+    "source": "    return a.equals(NaN)",
+    "decompiled": "        return Double.valueOf(d5).equals(Double.valueOf(Double.NaN));"
+  },
+  {
+    "source": "    return a.equals(-0.0)",
+    "decompiled": "        return Double.valueOf(d5).equals(Double.valueOf(-0.0d));"
+  },
+  {
+    "source": "    return a.equals(POSITIVE_INFINITY)",
+    "decompiled": "        return Double.valueOf(d5).equals(Double.valueOf(Double.POSITIVE_INFINITY));"
+  },
+  {
+    "source": "    if (i in 1..4) {\n        print(i)\n    }",
+    "decompiled": "        i4.i.e(\"i\", obj);\n        if (w3.j.O(new l4.j(1, 4), obj)) {\n            System.out.print(obj);\n        }"
+  },
+  {
+    "source": "    if (i in 4 downTo 1) {\n        print(i)\n    }",
+    "decompiled": "        i4.i.e(\"i\", obj);\n        if (w3.j.O(new l4.h(4, 1, -1), obj)) {\n            System.out.print(obj);\n        }"
+  },
+  {
+    "source": "    for (i in 1..8 step 2) print(i)",
+    "decompiled": "        i4.i.e(\"i\", obj);\n        int i5 = 1;\n        int i6 = u1.a.i(1, 8, 2);\n        if (1 > i6) {\n            return;\n        }\n        while (true) {\n            System.out.print(i5);\n            if (i5 == i6) {\n                return;\n            }\n            i5 += 2;\n        }"
+  },
+  {
+    "source": "    for (i in 8 downTo 1 step 2) print(i)",
+    "decompiled": "        i4.i.e(\"i\", obj);\n        int i5 = 8;\n        int i6 = u1.a.i(8, 1, -2);\n        if (i6 > 8) {\n            return;\n        }\n        while (true) {\n            System.out.print(i5);\n            if (i5 == i6) {\n                return;\n            }\n            i5 -= 2;\n        }"
+  },
+  {
+    "source": "    for (i in 10000000 until 100000000) {\n        print(i)\n    }",
+    "decompiled": "        i4.i.e(\"i\", obj);\n        for (int i5 = 10000000; i5 < 100000000; i5++) {\n            System.out.print(i5);\n        }"
+  },
+  {
+    "source": "    if (i in 100000000..400000000) {\n        print(i)\n    }",
+    "decompiled": "        i4.i.e(\"i\", obj);\n        if (w3.j.O(new l4.j(100000000, 400000000), obj)) {\n            System.out.print(obj);\n        }"
+  },
+  {
+    "source": "    if (i in 400000000 downTo 100000000) {\n        print(i)\n    }",
+    "decompiled": "        i4.i.e(\"i\", obj);\n        if (w3.j.O(new l4.h(400000000, 100000000, -1), obj)) {\n            System.out.print(obj);\n        }"
+  },
+  {
+    "source": "    for (i in 100000000..800000000 step 2324) print(i)",
+    "decompiled": "        i4.i.e(\"i\", obj);\n        int i5 = 100000000;\n        int i6 = u1.a.i(100000000, 800000000, 2324);\n        if (100000000 > i6) {\n            return;\n        }\n        while (true) {\n            System.out.print(i5);\n            if (i5 == i6) {\n                return;\n            }\n            i5 += 2324;\n        }"
+  },
+  {
+    "source": "    for (i in 800000000 downTo 100000000 step 2345) print(i)",
+    "decompiled": "        i4.i.e(\"i\", obj);\n        int i5 = 800000000;\n        int i6 = u1.a.i(800000000, 100000000, -2345);\n        if (i6 > 800000000) {\n            return;\n        }\n        while (true) {\n            System.out.print(i5);\n            if (i5 == i6) {\n                return;\n            }\n            i5 -= 2345;\n        }"
+  },
+  {
+    "source": "    for (i in 100000000 until 1000000000) {\n        print(i)\n    }",
+    "decompiled": "        i4.i.e(\"i\", obj);\n        for (int i5 = 100000000; i5 < 1000000000; i5++) {\n            System.out.print(i5);\n        }"
+  },
+  {
+    "source": "    println((1..10).filter { it % 2 == 0 })",
+    "decompiled": "        boolean z4;\n        i4.i.e(\"i\", obj);\n        l4.j jVar = new l4.j(1, 10);\n        ArrayList arrayList = new ArrayList();\n        for (Integer num : jVar) {\n            if (num.intValue() % 2 == 0) {\n                z4 = true;\n            } else {\n                z4 = false;\n            }\n            if (z4) {\n                arrayList.add(num);\n            }\n        }\n        System.out.println(arrayList);"
+  },
+  {
+    "source": "    val x = 10\n    val y = 9\n    if (x in 1..y+1) {\n        return true\n    }\n    return false",
+    "decompiled": "        i4.i.e(\"i\", obj);\n        return true;"
+  },
+  {
+    "source": "    val list = listOf(\"a\", \"b\", \"c\")\n\n    if (-1 !in 0..list.lastIndex) {\n        println(\"qwe\")\n    }\n    if (list.size !in list.indices) {\n        println(\"zxs\")\n    }",
+    "decompiled": "        i4.i.e(\"i\", obj);\n        List u5 = androidx.activity.m.u(\"a\", \"b\", \"c\");\n        System.out.println((Object) \"qwe\");\n        int size = u5.size();\n        int size2 = u5.size();\n        boolean z4 = false;\n        if (size2 >= 0 && size2 < size) {\n            z4 = true;\n        }\n        if (!z4) {\n            System.out.println((Object) \"zxs\");\n        }"
+  },
+  {
+    "source": "    val asc = Array(5) { i -> (i * i).toString() }\n    return asc",
+    "decompiled": "        String[] strArr = new String[5];\n        for (int i5 = 0; i5 < 5; i5++) {\n            strArr[i5] = String.valueOf(i5 * i5);\n        }\n        return strArr;"
+  },
+  {
+    "source": "    val asc = Array(5) { i -> (i * i).toString() }\n    asc.forEach { println(it) }",
+    "decompiled": "        String[] strArr = new String[5];\n        for (int i5 = 0; i5 < 5; i5++) {\n            strArr[i5] = String.valueOf(i5 * i5);\n        }\n        for (int i6 = 0; i6 < 5; i6++) {\n            System.out.println((Object) strArr[i6]);\n        }"
+  },
+  {
+    "source": "    val x: IntArray = intArrayOf(1, 2, 3)\n    return x",
+    "decompiled": "        return new int[]{1, 2, 3};"
+  },
+  {
+    "source": "    val arr = IntArray(5)\n    return arr",
+    "decompiled": "        return new int[5];"
+  },
+  {
+    "source": "    val arr = IntArray(5) { 42 }\n    return arr",
+    "decompiled": "        int[] iArr = new int[5];\n        for (int i5 = 0; i5 < 5; i5++) {\n            iArr[i5] = 42;\n        }\n        return iArr;"
+  },
+  {
+    "source": "    var arr = IntArray(5) { it * 1 }\n    return arr",
+    "decompiled": "        int[] iArr = new int[5];\n        for (int i5 = 0; i5 < 5; i5++) {\n            iArr[i5] = i5 * 1;\n        }\n        return iArr;"
+  },
+  {
+    "source": "    var arr = IntArray(5) { it * 1 }\n    return arr[1] + arr[2]",
+    "decompiled": "        int[] iArr = new int[5];\n        for (int i5 = 0; i5 < 5; i5++) {\n            iArr[i5] = i5 * 1;\n        }\n        return iArr[1] + iArr[2];"
+  },
+  {
+    "source": "    val arr = ByteArray(5)\n    return arr",
+    "decompiled": "        return new byte[5];"
+  },
+  {
+    "source": "    val arr = ShortArray(5) { 42 }\n    return arr",
+    "decompiled": "        short[] sArr = new short[5];\n        for (int i5 = 0; i5 < 5; i5++) {\n            sArr[i5] = 42;\n        }\n        return sArr;"
+  },
+  {
+    "source": "    var arr = DoubleArray(5) { it * 1.0 }\n    return arr",
+    "decompiled": "        double[] dArr = new double[5];\n        for (int i5 = 0; i5 < 5; i5++) {\n            dArr[i5] = i5 * 1.0d;\n        }\n        return dArr;"
+  },
+  {
+    "source": "    var arr = DoubleArray(5) { it * 1.0 }\n    return arr[1] + arr[2]",
+    "decompiled": "        double[] dArr = new double[5];\n        for (int i5 = 0; i5 < 5; i5++) {\n            dArr[i5] = i5 * 1.0d;\n        }\n        return dArr[1] + dArr[2];"
+  },
+  {
+    "source": "    when {\n        \"ore\" in items -> return \"s\"\n        \"apple\" in items -> return \"cvb\"\n    }\n    return  \"oo\"",
+    "decompiled": "        i4.i.e(\"items\", set);\n        if (set.contains(\"ore\")) {\n            return \"s\";\n        }\n        if (set.contains(\"apple\")) {\n            return \"cvb\";\n        }\n        return \"oo\";"
+  },
+  {
+    "source": "    println(\"Number of elements: ${numbers.size}\")\n    if (numbers.contains(1)) println(\"1 is in the set\")\n\n    val numbersBackwards = setOf(4, 3, 2, 1)\n    return \"The sets are equal: ${numbers == numbersBackwards}\"",
+    "decompiled": "        i4.i.e(\"numbers\", set);\n        System.out.println((Object) (\"Number of elements: \" + set.size()));\n        if (set.contains(1)) {\n            System.out.println((Object) \"1 is in the set\");\n        }\n        Set l = b3.d.l(4, 3, 2, 1);\n        StringBuilder e5 = androidx.activity.e.e(\"The sets are equal: \");\n        e5.append(i4.i.a(set, l));\n        return e5.toString();"
+  },
+  {
+    "source": "    val pair = setA.partition {\n        it % 2 == 0\n    }\n    return pair",
+    "decompiled": "        boolean z4;\n        i4.i.e(\"setA\", set);\n        ArrayList arrayList = new ArrayList();\n        ArrayList arrayList2 = new ArrayList();\n        for (Object obj : set) {\n            if (((Number) obj).intValue() % 2 == 0) {\n                z4 = true;\n            } else {\n                z4 = false;\n            }\n            if (z4) {\n                arrayList.add(obj);\n            } else {\n                arrayList2.add(obj);\n            }\n        }\n        return new v3.d<>(arrayList, arrayList2);"
+  },
+  {
+    "source": "    intsHashSet.add(5)\n    intsHashSet.remove(2)\n    println(intsHashSet::class.java)\n    return intsHashSet.elementAt(2)",
+    "decompiled": "        Object obj;\n        i4.i.e(\"intsHashSet\", hashSet);\n        hashSet.add(5);\n        hashSet.remove(2);\n        System.out.println(hashSet.getClass());\n        boolean z4 = hashSet instanceof List;\n        if (z4) {\n            obj = ((List) hashSet).get(2);\n        } else {\n            w3.i iVar = new w3.i();\n            if (z4) {\n                List list = (List) hashSet;\n                if (2 <= list.size() - 1) {\n                    obj = list.get(2);\n                } else {\n                    iVar.g(2);\n                    throw null;\n                }\n            } else {\n                int i5 = 0;\n                for (Object obj2 : hashSet) {\n                    int i6 = i5 + 1;\n                    if (2 == i5) {\n                        obj = obj2;\n                    } else {\n                        i5 = i6;\n                    }\n                }\n                iVar.g(2);\n                throw null;\n            }\n        }\n        return ((Number) obj).intValue();"
+  },
+  {
+    "source": "    intSortedSet.add(6)\n    intSortedSet.remove(1)\n    println(intSortedSet::class.java)\n    return intSortedSet",
+    "decompiled": "        i4.i.e(\"intSortedSet\", sortedSet);\n        sortedSet.add(6);\n        sortedSet.remove(1);\n        System.out.println(sortedSet.getClass());\n        return sortedSet;"
+  },
+  {
+    "source": "    intLinkedHashSet.add(44)\n    intLinkedHashSet.remove(2)\n    println(intLinkedHashSet::class.java)\n    return intLinkedHashSet",
+    "decompiled": "        i4.i.e(\"intLinkedHashSet\", linkedHashSet);\n        linkedHashSet.add(44);\n        linkedHashSet.remove(2);\n        System.out.println(linkedHashSet.getClass());\n        return linkedHashSet;"
+  },
+  {
+    "source": "    intMutableSet.add(8)\n    intMutableSet.remove(3)\n    return intMutableSet::class.java",
+    "decompiled": "        i4.i.e(\"intMutableSet\", set);\n        set.add(8);\n        set.remove(3);\n        return set.getClass();"
+  },
+  {
+    "source": "    val setB = mutableSetOf<String>(\"a\",\"b\",\"c\",\"d\")\n    setB.addAll(setA)\n    println(setB)\n    return setB.union(setA)",
+    "decompiled": "        i4.i.e(\"setA\", set);\n        String[] strArr = {\"a\", \"b\", \"c\", \"d\"};\n        LinkedHashSet linkedHashSet = new LinkedHashSet(androidx.activity.m.v(4));\n        for (int i5 = 0; i5 < 4; i5++) {\n            linkedHashSet.add(strArr[i5]);\n        }\n        linkedHashSet.addAll(set);\n        System.out.println(linkedHashSet);\n        LinkedHashSet linkedHashSet2 = new LinkedHashSet(linkedHashSet);\n        w3.g.N(set, linkedHashSet2);\n        return linkedHashSet2;"
+  },
+  {
+    "source": "    fruits\n        .filter { it.startsWith(\"\u0420\u00b0\") }\n        .sortedBy { it }\n        .map { it.uppercase() }\n        .forEach { println(it) }\n    return fruits",
+    "decompiled": "        i4.i.e(\"fruits\", list);\n        ArrayList arrayList = new ArrayList();\n        for (Object obj : list) {\n            if (o4.g.v((String) obj, \"\u0420\u00b0\")) {\n                arrayList.add(obj);\n            }\n        }\n        List<String> P = w3.j.P(arrayList, new Comparator() {\n            @Override\n            public final int compare(T t5, T t6) {\n                return androidx.activity.m.i((String) t5, (String) t6);\n            }\n        });\n        ArrayList arrayList2 = new ArrayList(w3.e.M(P));\n        for (String str : P) {\n            String upperCase = str.toUpperCase(Locale.ROOT);\n            i4.i.d(\"this as java.lang.String).toUpperCase(Locale.ROOT)\", upperCase);\n            arrayList2.add(upperCase);\n        }\n        Iterator it = arrayList2.iterator();\n        while (it.hasNext()) {\n            System.out.println((Object) ((String) it.next()));\n        }\n        return list;"
+  },
+  {
+    "source": "    println(\"Number of elements: ${numbers.size}\")\n    println(\"Third element: ${numbers.get(2)}\")\n    println(\"Fourth element: ${numbers[3]}\")\n    return \"Index of element \\\"two\\\" ${numbers.indexOf(\"two\")}\"",
+    "decompiled": "        i4.i.e(\"numbers\", list);\n        System.out.println((Object) (\"Number of elements: \" + list.size()));\n        System.out.println((Object) (\"Third element: \" + list.get(2)));\n        System.out.println((Object) (\"Fourth element: \" + list.get(3)));\n        return \"Index of element \\\"two\\\" \" + list.indexOf(\"two\");"
+  },
+  {
+    "source": "    numbers.add(\"five\")\n    return numbers",
+    "decompiled": "        i4.i.e(\"numbers\", list);\n        list.add(\"five\");\n        return list;"
+  },
+  {
+    "source": "    numbers.add(5)\n    numbers.removeAt(1)\n    numbers[0] = 0\n    numbers.shuffle()\n    return numbers",
+    "decompiled": "        i4.i.e(\"numbers\", list);\n        list.add(5);\n        list.remove(1);\n        list.set(0, 0);\n        Collections.shuffle(list);\n        return list;"
+  },
+  {
+    "source": "    val associatedMap = cats.associate { Pair(cats[0], cats[1])}\n\n    return associatedMap",
+    "decompiled": "        i4.i.e(\"cats\", list);\n        int v = androidx.activity.m.v(w3.e.M(list));\n        if (v < 16) {\n            v = 16;\n        }\n        LinkedHashMap linkedHashMap = new LinkedHashMap(v);\n        for (Number number : list) {\n            number.intValue();\n            linkedHashMap.put(list.get(0), list.get(1));\n        }\n        return linkedHashMap;"
+  },
+  {
+    "source": "    val associatedMap = cats.associate { Pair(cats[0], cats[1])}\n    val originalMap = mutableMapOf<Int, Int>()\n    cats.associateTo(originalMap) { cats[0] to cats[1] }\n    return originalMap",
+    "decompiled": "        i4.i.e(\"cats\", list);\n        int v = androidx.activity.m.v(w3.e.M(list));\n        if (v < 16) {\n            v = 16;\n        }\n        LinkedHashMap linkedHashMap = new LinkedHashMap(v);\n        for (Number number : list) {\n            number.intValue();\n            linkedHashMap.put(list.get(0), list.get(1));\n        }\n        LinkedHashMap linkedHashMap2 = new LinkedHashMap();\n        for (Number number2 : list) {\n            number2.intValue();\n            linkedHashMap2.put(list.get(0), list.get(1));\n        }\n        return linkedHashMap2;"
+  },
+  {
+    "source": "    val result = listOf(cats, listOf(4, 5, 6)).flatMap { it }\n    return result",
+    "decompiled": "        i4.i.e(\"cats\", list);\n        List<List> u5 = androidx.activity.m.u(list, androidx.activity.m.u(4, 5, 6));\n        ArrayList arrayList = new ArrayList();\n        for (List list2 : u5) {\n            w3.g.N(list2, arrayList);\n        }\n        return arrayList;"
+  },
+  {
+    "source": "    var dest = list.map { it * it }\n    return dest.toString()",
+    "decompiled": "        i4.i.e(\"list\", list);\n        ArrayList arrayList = new ArrayList(w3.e.M(list));\n        for (Number number : list) {\n            int intValue = number.intValue();\n            arrayList.add(Integer.valueOf(intValue * intValue));\n        }\n        return arrayList.toString();"
+  },
+  {
+    "source": "    return list.mapIndexed { index, i ->  \"$index: $i\"}",
+    "decompiled": "        i4.i.e(\"list\", list);\n        ArrayList arrayList = new ArrayList(w3.e.M(list));\n        int i5 = 0;\n        for (Object obj : list) {\n            int i6 = i5 + 1;\n            if (i5 >= 0) {\n                int intValue = ((Number) obj).intValue();\n                arrayList.add(i5 + \": \" + intValue);\n                i5 = i6;\n            } else {\n                throw new ArithmeticException(\"Index overflow has happened.\");\n            }\n        }\n        return arrayList;"
+  },
+  {
+    "source": "    return list.mapNotNull {  }",
+    "decompiled": "        i4.i.e(\"list\", list);\n        ArrayList arrayList = new ArrayList();\n        for (Number number : list) {\n            number.intValue();\n            arrayList.add(m.f5692a);\n        }\n        return arrayList;"
+  },
+  {
+    "source": "    return cats.get(2)",
+    "decompiled": "        i4.i.e(\"cats\", list);\n        return list.get(2).intValue();"
+  },
+  {
+    "source": "    return cats.getOrElse(2)  { cats.first() }",
+    "decompiled": "        Integer valueOf;\n        i4.i.e(\"cats\", list);\n        if (2 <= list.size() - 1) {\n            valueOf = list.get(2);\n        } else if (!list.isEmpty()) {\n            valueOf = Integer.valueOf(list.get(0).intValue());\n        } else {\n            throw new NoSuchElementException(\"List is empty.\");\n        }\n        return valueOf.intValue();"
+  },
+  {
+    "source": "    return cats.any { it % 2 == 0 }",
+    "decompiled": "        boolean z4;\n        i4.i.e(\"cats\", list);\n        if (!list.isEmpty()) {\n            for (Number number : list) {\n                if (number.intValue() % 2 == 0) {\n                    z4 = true;\n                    continue;\n                } else {\n                    z4 = false;\n                    continue;\n                }\n                if (z4) {\n                    return true;\n                }\n            }\n        }\n        return false;"
+  },
+  {
+    "source": "    return cats.all { it < 11 }",
+    "decompiled": "        boolean z4;\n        i4.i.e(\"cats\", list);\n        if (!list.isEmpty()) {\n            for (Number number : list) {\n                if (number.intValue() < 11) {\n                    z4 = true;\n                    continue;\n                } else {\n                    z4 = false;\n                    continue;\n                }\n                if (!z4) {\n                    return false;\n                }\n            }\n        }\n        return true;"
+  },
+  {
+    "source": "    return cats.none { it > 6 }",
+    "decompiled": "        boolean z4;\n        i4.i.e(\"cats\", list);\n        if (!list.isEmpty()) {\n            for (Number number : list) {\n                if (number.intValue() > 6) {\n                    z4 = true;\n                    continue;\n                } else {\n                    z4 = false;\n                    continue;\n                }\n                if (z4) {\n                    return false;\n                }\n            }\n        }\n        return true;"
+  },
+  {
+    "source": "    return list.reduce { total, next ->\n        total + next\n    }",
+    "decompiled": "        i4.i.e(\"list\", list);\n        Iterator<T> it = list.iterator();\n        if (it.hasNext()) {\n            Object next = it.next();\n            while (it.hasNext()) {\n                next = Integer.valueOf(((Number) next).intValue() + ((Number) it.next()).intValue());\n            }\n            return ((Number) next).intValue();\n        }\n        throw new UnsupportedOperationException(\"Empty collection can't be reduced.\");"
+  },
+  {
+    "source": "    return list.maxOrNull()",
+    "decompiled": "        java.lang.Comparable comparable;\n        i4.i.e(\"list\", list);\n        Iterator<T> it = list.iterator();\n        if (!it.hasNext()) {\n            comparable = null;\n        } else {\n            java.lang.Comparable comparable2 = (java.lang.Comparable) it.next();\n            while (it.hasNext()) {\n                java.lang.Comparable comparable3 = (java.lang.Comparable) it.next();\n                if (comparable2.compareTo(comparable3) < 0) {\n                    comparable2 = comparable3;\n                }\n            }\n            comparable = comparable2;\n        }\n        return (Integer) comparable;"
+  },
+  {
+    "source": "    return list.dropLastWhile { it > 4 }",
+    "decompiled": "        boolean z4;\n        boolean z5;\n        i4.i.e(\"list\", list);\n        if (!list.isEmpty()) {\n            ListIterator<Integer> listIterator = list.listIterator(list.size());\n            while (listIterator.hasPrevious()) {\n                int i5 = 0;\n                if (listIterator.previous().intValue() > 4) {\n                    z4 = true;\n                    continue;\n                } else {\n                    z4 = false;\n                    continue;\n                }\n                if (!z4) {\n                    int nextIndex = listIterator.nextIndex() + 1;\n                    if (nextIndex >= 0) {\n                        z5 = true;\n                    } else {\n                        z5 = false;\n                    }\n                    if (z5) {\n                        if (nextIndex == 0) {\n                            return l.c;\n                        }\n                        if (nextIndex >= list.size()) {\n                            return w3.j.R(list);\n                        }\n                        if (nextIndex == 1) {\n                            if (!list.isEmpty()) {\n                                return androidx.activity.m.t(list.get(0));\n                            }\n                            throw new NoSuchElementException(\"List is empty.\");\n                        }\n                        ArrayList arrayList = new ArrayList(nextIndex);\n                        for (Object obj : list) {\n                            arrayList.add(obj);\n                            i5++;\n                            if (i5 == nextIndex) {\n                                break;\n                            }\n                        }\n                        return androidx.activity.m.x(arrayList);\n                    }\n                    throw new IllegalArgumentException((\"Requested element count \" + nextIndex + \" is less than zero.\").toString());\n                }\n            }\n        }\n        return l.c;"
+  },
+  {
+    "source": "    return list.sortedDescending()",
+    "decompiled": "        i4.i.e(\"list\", list);\n        return w3.j.P(list, y3.c.f5950a);"
+  },
+  {
+    "source": "    return list.sortWith(\n        nullsLast(compareByDescending{it}))",
+    "decompiled": "        i4.i.e(\"list\", list);\n        final ?? r0 = new Comparator() {\n            @Override\n            public final int compare(T t5, T t6) {\n                return androidx.activity.m.i(Integer.valueOf(((Number) t6).intValue()), Integer.valueOf(((Number) t5).intValue()));\n            }\n        };\n        Comparator comparator = new Comparator() {\n            @Override\n            public final int compare(Object obj, Object obj2) {\n                Comparator comparator2 = r0;\n                i.e(\"$comparator\", comparator2);\n                if (obj == obj2) {\n                    return 0;\n                }\n                if (obj == null) {\n                    return 1;\n                }\n                if (obj2 == null) {\n                    return -1;\n                }\n                return comparator2.compare(obj, obj2);\n            }\n        };\n        if (list.size() > 1) {\n            Collections.sort(list, comparator);\n        }"
+  },
+  {
+    "source": "    return list.shuffle()",
+    "decompiled": "        i4.i.e(\"list\", list);\n        Collections.shuffle(list);"
+  },
+  {
+    "source": "    for ((index, element) in list.withIndex()){\n        println(\"$index: $element\")\n    }",
+    "decompiled": "        i4.i.e(\"list\", list);\n        int i5 = 0;\n        for (Integer num : list) {\n            int i6 = i5 + 1;\n            int intValue = num.intValue();\n            System.out.println((Object) (i5 + \": \" + intValue));\n            i5 = i6;\n        }"
+  },
+  {
+    "source": "    list.forEach lit@{\n        if (it == 3) return@lit\n        print(it)\n    }",
+    "decompiled": "        i4.i.e(\"list\", list);\n        for (Number number : list) {\n            int intValue = number.intValue();\n            if (intValue != 3) {\n                System.out.print(intValue);\n            }\n        }"
+  },
+  {
+    "source": "    list.forEach {\n        if (it == 3) return@forEach\n        it * 3\n    }",
+    "decompiled": "        i4.i.e(\"list\", list);\n        for (Number number : list) {\n            number.intValue();\n        }"
+  },
+  {
+    "source": "    run loop@{\n        list.forEach {\n            if (it == 3) return@loop\n            it * 3\n        }\n    }",
+    "decompiled": "        i4.i.e(\"list\", list);\n        Iterator<T> it = list.iterator();\n        while (it.hasNext() && ((Number) it.next()).intValue() != 3) {\n        }"
+  },
+  {
+    "source": "    val cats = mutableListOf(\"vavd\", \"fbebe\", \"dva\", \"wrvw\")\n\n    val catSet = cats.toSet()\n    return catSet",
+    "decompiled": "        return w3.j.S(new ArrayList(new w3.b(new String[]{\"vavd\", \"fbebe\", \"dva\", \"wrvw\"})));"
+  },
+  {
+    "source": "    val catSet = cats.toSet()\n    return catSet",
+    "decompiled": "        i4.i.e(\"cats\", list);\n        return w3.j.S(list);"
+  },
+  {
+    "source": "    val catSet = cats.toSet()\n        .toList()\n    return catSet",
+    "decompiled": "        i4.i.e(\"cats\", list);\n        return w3.j.R(w3.j.S(list));"
+  },
+  {
+    "source": "    return cats.mapNotNull { it.last() }",
+    "decompiled": "        boolean z4;\n        i4.i.e(\"cats\", set);\n        ArrayList arrayList = new ArrayList();\n        for (String str : set) {\n            i4.i.e(\"<this>\", str);\n            if (str.length() == 0) {\n                z4 = true;\n            } else {\n                z4 = false;\n            }\n            if (!z4) {\n                arrayList.add(Character.valueOf(str.charAt(o4.j.w(str))));\n            } else {\n                throw new NoSuchElementException(\"Char sequence is empty.\");\n            }\n        }\n        return arrayList;"
+  },
+  {
+    "source": "    return names.zip(sizes).toMap()",
+    "decompiled": "        i4.i.e(\"names\", list);\n        i4.i.e(\"sizes\", list2);\n        return q.M(w3.j.T(list, list2));"
+  },
+  {
+    "source": "    for(s in strings) print(\"$s \")\n    println()",
+    "decompiled": "        i4.i.e(\"strings\", collection);\n        Iterator<String> it = collection.iterator();\n        while (it.hasNext()) {\n            System.out.print((Object) (it.next() + ' '));\n        }\n        System.out.println();"
+  },
+  {
+    "source": "    this.filterTo(shortWords) { it.length <= maxLength }\n    val articles = setOf(\"a\", \"A\", \"an\", \"An\", \"the\", \"The\")\n    shortWords -= articles\n    return shortWords",
+    "decompiled": "        boolean z4;\n        i4.i.e(\"<this>\", list);\n        i4.i.e(\"shortWords\", list2);\n        for (Object obj : list) {\n            if (((String) obj).length() <= i5) {\n                z4 = true;\n            } else {\n                z4 = false;\n            }\n            if (z4) {\n                list2.add(obj);\n            }\n        }\n        list2.removeAll(b3.d.l(\"a\", \"A\", \"an\", \"An\", \"the\", \"The\"));\n        return list2;"
+  },
+  {
+    "source": "    if (numbersMap.containsValue(1)) numbersMap.keys\n    return numbersMap.values",
+    "decompiled": "        i4.i.e(\"numbersMap\", map);\n        if (map.containsValue(1)) {\n            map.keySet();\n        }\n        return map.values();"
+  },
+  {
+    "source": "    return numbersMap == anotherMap",
+    "decompiled": "        i4.i.e(\"numbersMap\", map);\n        i4.i.e(\"anotherMap\", map2);\n        return i4.i.a(map, map2);"
+  },
+  {
+    "source": "    numbersMap.put(\"three\", 3)\n    numbersMap[\"one\"] = 11\n    return numbersMap",
+    "decompiled": "        i4.i.e(\"numbersMap\", map);\n        map.put(\"three\", 3);\n        map.put(\"one\", 11);\n        return map;"
+  },
+  {
+    "source": "    for((alphabet,word) in numbersMap) {\n        println(alphabet + \" for \" + word)\n    }",
+    "decompiled": "        i4.i.e(\"numbersMap\", linkedHashMap);\n        for (Map.Entry<String, Integer> entry : linkedHashMap.entrySet()) {\n            int intValue = entry.getValue().intValue();\n            System.out.println((Object) (entry.getKey() + \" for \" + intValue));\n        }"
+  },
+  {
+    "source": "    numbersMap.putIfAbsent(\"Bluto\", 3)\n    for(key in numbersMap.keys) {\n        println(key.toString() + \" = \" + numbersMap[key])\n    }",
+    "decompiled": "        i4.i.e(\"numbersMap\", linkedHashMap);\n        linkedHashMap.putIfAbsent(\"Bluto\", 3);\n        for (String str : linkedHashMap.keySet()) {\n            System.out.println((Object) (str + \" = \" + linkedHashMap.get(str)));\n        }"
+  },
+  {
+    "source": "    return numbersMap.keys.firstOrNull() ?: \"\"",
+    "decompiled": "        i4.i.e(\"numbersMap\", linkedHashMap);\n        Set<String> keySet = linkedHashMap.keySet();\n        i4.i.d(\"numbersMap.keys\", keySet);\n        Object obj = null;\n        if (keySet instanceof List) {\n            List list = (List) keySet;\n            if (!list.isEmpty()) {\n                obj = list.get(0);\n            }\n        } else {\n            Iterator<T> it = keySet.iterator();\n            if (it.hasNext()) {\n                obj = it.next();\n            }\n        }\n        String str = (String) obj;\n        if (str == null) {\n            return \"\";\n        }\n        return str;"
+  },
+  {
+    "source": "    var max = a\n    if (a < b) max = b\n    return max",
+    "decompiled": "        return i5 < i6 ? i6 : i5;"
+  },
+  {
+    "source": "    var max: Int\n    if (a > b) {\n        max = a\n    } else {\n        max = b\n    }\n    return max",
+    "decompiled": "        return i5 > i6 ? i5 : i6;"
+  },
+  {
+    "source": "    val max = if (a > b) a else b\n    return max",
+    "decompiled": "        return i5 > i6 ? i5 : i6;"
+  },
+  {
+    "source": "    when (x) {\n        1 -> print(\"x == 1\")\n        2 -> print(\"x == 2\")\n        else -> {\n            print(\"x neither 1, nor 2\")\n        }\n    }",
+    "decompiled": "        if (i5 != 1) {\n            if (i5 != 2) {\n                System.out.print((Object) \"x neither 1, nor 2\");\n                return;\n            } else {\n                System.out.print((Object) \"x == 2\");\n                return;\n            }\n        }\n        System.out.print((Object) \"x == 1\");"
+  },
+  {
+    "source": "    val numericValue = when (condition020(a, b)) {\n         0 -> Bit.ZERO\n         1 -> Bit.ONE\n        else -> {}\n    }\n    return numericValue",
+    "decompiled": "        int condition020 = condition020(i5, i6);\n        if (condition020 != 0) {\n            if (condition020 != 1) {\n                return m.f5692a;\n            }\n            return Bit.ONE;\n        }\n        return Bit.ZERO;"
+  },
+  {
+    "source": "    when (x) {\n        x.toInt() -> print(\"s encodes x\")\n        else -> print(\"s does not encode x\")\n    }",
+    "decompiled": "        System.out.print((Object) \"s encodes x\");"
+  },
+  {
+    "source": "    val a = when (x) {\n        in 1..10 -> true\n        !in 10..20 -> true\n        else -> false\n    }\n    return a",
+    "decompiled": "        if (!(1 <= i5 && i5 < 11)) {\n            if (10 <= i5 && i5 < 21) {\n                return false;\n            }\n        }\n        return true;"
+  },
+  {
+    "source": "    val a = when(x) {\n        is String -> x.startsWith(\"prefix\")\n        else -> false\n    }\n    return a",
+    "decompiled": "        i4.i.e(\"x\", obj);\n        if (obj instanceof String) {\n            return o4.g.v((String) obj, \"prefix\");\n        }\n        return false;"
+  },
+  {
+    "source": "    for (item in collection) print(item)",
+    "decompiled": "        i4.i.e(\"collection\", list);\n        for (String str : list) {\n            System.out.print((Object) str);\n        }"
+  },
+  {
+    "source": "    for (i in 6 downTo a step 2) {\n        println(i)\n    }",
+    "decompiled": "        int i6 = 6;\n        int i7 = u1.a.i(6, i5, -2);\n        if (i7 > 6) {\n            return;\n        }\n        while (true) {\n            System.out.println(i6);\n            if (i6 != i7) {\n                i6 -= 2;\n            } else {\n                return;\n            }\n        }"
+  },
+  {
+    "source": "    for ((index, value) in array.withIndex()) {\n        println(\"the element at $index is $value\")\n    }",
+    "decompiled": "        i4.i.e(\"array\", numArr);\n        int length = numArr.length;\n        for (int i5 = 0; i5 < length; i5++) {\n            int intValue = numArr[i5].intValue();\n            System.out.println((Object) (\"the element at \" + i5 + \" is \" + intValue));\n        }"
+  },
+  {
+    "source": "    var index = 0\n    while (index < items.size) {\n        println(\"${index} - ${items[index]}\")\n        index++\n    }",
+    "decompiled": "        i4.i.e(\"items\", list);\n        for (int i5 = 0; i5 < list.size(); i5++) {\n            System.out.println((Object) (i5 + \" - \" + list.get(i5)));\n        }"
+  },
+  {
+    "source": "    var a = when (obj) {\n        1 -> \"One\"\n        \"Hello\" -> \"Hi\"\n        is Long -> \"Long\"\n        !is String -> \"Not string\"\n        else -> \"Unknown\"\n    }\n    return a",
+    "decompiled": "        i4.i.e(\"obj\", obj);\n        if (i4.i.a(obj, 1)) {\n            return \"One\";\n        }\n        if (i4.i.a(obj, \"Hello\")) {\n            return \"Hi\";\n        }\n        if (obj instanceof Long) {\n            return \"Long\";\n        }\n        if (!(obj instanceof String)) {\n            return \"Not string\";\n        }\n        return \"Unknown\";"
+  },
+  {
+    "source": "    val x = parseInt(arg1)\n    val y = parseInt(arg2)\n\n    if (x != null && y != null) {\n        print(x * y)\n    }\n    else {\n        println(\"'$arg1' or '$arg2'\")\n    }",
+    "decompiled": "        i4.i.e(\"arg1\", str);\n        i4.i.e(\"arg2\", str2);\n        System.out.print(Integer.parseInt(str2) * Integer.parseInt(str));"
+  },
+  {
+    "source": "    val stream = Files.newInputStream(Paths.get(\"/some/file.txt\"))\n    stream.buffered().reader().use { reader ->\n        println(reader.readText())\n    }",
+    "decompiled": "        BufferedInputStream bufferedInputStream;\n        InputStream newInputStream = Files.newInputStream(Paths.get(\"/some/file.txt\", new String[0]), new OpenOption[0]);\n        i4.i.d(\"stream\", newInputStream);\n        if (newInputStream instanceof BufferedInputStream) {\n            bufferedInputStream = (BufferedInputStream) newInputStream;\n        } else {\n            bufferedInputStream = new BufferedInputStream(newInputStream, 8192);\n        }\n        InputStreamReader inputStreamReader = new InputStreamReader(bufferedInputStream, o4.a.f4627a);\n        try {\n            StringWriter stringWriter = new StringWriter();\n            char[] cArr = new char[8192];\n            for (int read = inputStreamReader.read(cArr); read >= 0; read = inputStreamReader.read(cArr)) {\n                stringWriter.write(cArr, 0, read);\n            }\n            String stringWriter2 = stringWriter.toString();\n            i4.i.d(\"buffer.toString()\", stringWriter2);\n            System.out.println((Object) stringWriter2);\n            b3.d.c(inputStreamReader, null);\n        } finally {\n        }"
+  },
+  {
+    "source": "    return IntArray(size).apply { fill(-1) }",
+    "decompiled": "        int[] iArr = new int[i5];\n        Arrays.fill(iArr, 0, i5, -1);\n        return iArr;"
+  },
+  {
+    "source": "    val data = MutableLiveData<String>().apply { postValue(\"hello\") }",
+    "decompiled": "        boolean z4;\n        y yVar = new y();\n        synchronized (yVar.f1639a) {\n            if (yVar.f1643f == LiveData.f1638k) {\n                z4 = true;\n            } else {\n                z4 = false;\n            }\n            yVar.f1643f = \"hello\";\n        }\n        if (z4) {\n            j.a.w().x(yVar.f1647j);\n        }"
+  },
+  {
+    "source": "    if (obj !is String) return null\n    return obj.length",
+    "decompiled": "        i4.i.e(\"obj\", obj);\n        if (!(obj instanceof String)) {\n            return null;\n        }\n        return Integer.valueOf(((String) obj).length());"
+  },
+  {
+    "source": "    if (obj is String && obj.length > 0) {\n        return obj.length\n    }\n    return null",
+    "decompiled": "        i4.i.e(\"obj\", obj);\n        if (obj instanceof String) {\n            String str = (String) obj;\n            if (str.length() > 0) {\n                return Integer.valueOf(str.length());\n            }\n            return null;\n        }\n        return null;"
+  },
+  {
+    "source": "    var townSquare = obj\n    var className = when(townSquare) {\n        is Int -> \"TownSquare\"\n        is String -> \"Room\"\n        else -> throw IllegalArgumentException()\n    }\n    print(className)",
+    "decompiled": "        String str;\n        i4.i.e(\"obj\", obj);\n        if (obj instanceof Integer) {\n            str = \"TownSquare\";\n        } else if (obj instanceof String) {\n            str = \"Room\";\n        } else {\n            throw new IllegalArgumentException();\n        }\n        System.out.print((Object) str);"
+  },
+  {
+    "source": "    val isSourceOfBlessings = if (any is Integer) {\n        any.toString()\n    } else {\n        (any as Room).name == \"Fount of Blessings\"\n    }\n    println(\"$any is a source of blessings: $isSourceOfBlessings\")",
+    "decompiled": "        Object valueOf;\n        i4.i.e(\"any\", obj);\n        if (obj instanceof Integer) {\n            valueOf = obj.toString();\n        } else {\n            valueOf = Boolean.valueOf(i4.i.a(((Room) obj).getName(), \"Fount of Blessings\"));\n        }\n        System.out.println((Object) (obj + \" is a source of blessings: \" + valueOf));"
+  },
+  {
+    "source": "    val arg = \"\"\n    return arg",
+    "decompiled": "        i4.i.e(\"arg\", str);\n        return \"\";"
+  },
+  {
+    "source": "    if (something is List<*>) {\n        something.forEach { it*3 }\n    }\n    return something",
+    "decompiled": "        i4.i.e(\"something\", list);\n        for (Number number : list) {\n            number.intValue();\n        }\n        return list;"
+  },
+  {
+    "source": "    file.inputStream().use {\n        TODO(\"run\")\n    }",
+    "decompiled": "        i4.i.e(\"file\", file);\n        FileInputStream fileInputStream = new FileInputStream(file);\n        try {\n            throw new v3.c();\n        } finally {\n        }"
+  },
+  {
+    "source": "    val intsDictionary: Map<String, Int> = f008(intsFile) as Map<String, Int>\n    return intsDictionary",
+    "decompiled": "        i4.i.e(\"intsFile\", file);\n        Map f008 = f008(file);\n        i4.i.c(\"null cannot be cast to non-null type kotlin.collections.Map<kotlin.String, kotlin.Int>\", f008);\n        return f008;"
+  },
+  {
+    "source": "    if (x is String) {\n        print(x.length)\n    }",
+    "decompiled": "        i4.i.e(\"x\", obj);\n        if (obj instanceof String) {\n            System.out.print(((String) obj).length());\n        }"
+  },
+  {
+    "source": "    val repeatFun: String.(Int) -> String = { times -> this.repeat(times) }\n    val twoParameters: (String, Int) -> String = repeatFun\n\n    fun runTransformation(f: (String, Int) -> String): String {\n        return f(\"hello\", 3)\n    }\n    val result = runTransformation(repeatFun)\n\n    println(\"result = $result\")",
+    "decompiled": "        System.out.println((Object) androidx.activity.e.c(\"result = \", i.f3576d.d(\"hello\", 3)));"
+  },
+  {
+    "source": "    var sum = 0\n    ints.filter { it > 0 }.forEach {\n        sum += it\n    }\n    return sum",
+    "decompiled": "        int i5;\n        i4.i.e(\"ints\", list);\n        ArrayList<Number> arrayList = new ArrayList();\n        Iterator<T> it = list.iterator();\n        while (true) {\n            i5 = 0;\n            if (!it.hasNext()) {\n                break;\n            }\n            Object next = it.next();\n            if (((Number) next).intValue() > 0) {\n                i5 = 1;\n            }\n            if (i5 != 0) {\n                arrayList.add(next);\n            }\n        }\n        for (Number number : arrayList) {\n            i5 += number.intValue();\n        }\n        return i5;"
+  },
+  {
+    "source": "    val result = Address()\n    result.name = address.name\n    result.street = address.street\n    return result",
+    "decompiled": "        i4.i.e(\"address\", address);\n        Address address2 = new Address();\n        address2.setName(address.getName());\n        address2.setStreet(address.getStreet());\n        return address2;"
+  },
+  {
+    "source": "    val objects: Source<Any> = strs\n    return objects",
+    "decompiled": "        i4.i.e(\"strs\", source);\n        return source;"
+  },
+  {
+    "source": "    x.compareTo(1.0)\n    val y: Comparable<Double> = x\n    return y",
+    "decompiled": "        i4.i.e(\"x\", comparable);\n        comparable.compareTo(Double.valueOf(1.0d));\n        return comparable;"
+  },
+  {
+    "source": "    assert(from.size == to.size)\n    for (i in from.indices)\n        to[i] = from[i]",
+    "decompiled": "        i4.i.e(\"from\", objArr);\n        i4.i.e(\"to\", objArr2);\n        int length = objArr.length;\n        for (int i5 = 0; i5 < length; i5++) {\n            objArr2[i5] = objArr[i5];\n        }"
+  },
+  {
+    "source": "    val lazyValue: String by lazy {\n        println(\"computed!\")\n        \"Hello\"\n    }",
+    "decompiled": "        i4.i.e(\"w\", str);\n        i4.i.e(\"w1\", str2);"
+  },
+  {
+    "source": "    object : ReadWriteProperty<Any?, Int> {\n        var curValue = 0\n        override fun getValue(thisRef: Any?, property: kotlin.reflect.KProperty<*>): Int = curValue\n        override fun setValue(thisRef: Any?, property: KProperty<*>, value: Int) {\n            curValue = value\n        }\n    }",
+    "decompiled": "        new Object() {\n\n            \n            public int f3581a;\n\n            public final int getCurValue() {\n                return this.f3581a;\n            }\n\n            \n            public   Object m9getValue(Object obj, m4.e eVar) {\n                return getValue(obj, (m4.e<?>) eVar);\n            }\n\n            public final void setCurValue(int i5) {\n                this.f3581a = i5;\n            }\n\n            public   void setValue(Object obj, m4.e eVar, Object obj2) {\n                setValue(obj, eVar, ((Number) obj2).intValue());\n            }\n\n            public Integer getValue(Object obj, m4.e<?> eVar) {\n                i.e(\"property\", eVar);\n                return Integer.valueOf(this.f3581a);\n            }\n\n            public void setValue(Object obj, m4.e<?> eVar, int i5) {\n                i.e(\"property\", eVar);\n                this.f3581a = i5;\n            }\n        };"
+  },
+  {
+    "source": "    try{\n        val line = reader.readLine()\n        return  Integer.parseInt(line)\n    }\n    catch(e: NumberFormatException){\n        return null\n    }\n    finally{\n        reader.close()\n    }",
+    "decompiled": "        i4.i.e(\"reader\", bufferedReader);\n        try {\n            return Integer.valueOf(Integer.parseInt(bufferedReader.readLine()));\n        } catch (NumberFormatException unused) {\n            return null;\n        } finally {\n            bufferedReader.close();\n        }"
+  },
+  {
+    "source": "    val a: Int? = try { input.toInt() } catch (e: NumberFormatException) { null }",
+    "decompiled": "        i4.i.e(\"input\", str);\n        try {\n            Integer.parseInt(str);\n        } catch (NumberFormatException unused) {\n        }"
+  },
+  {
+    "source": "    throw IllegalArgumentException(message)",
+    "decompiled": "        i4.i.e(\"message\", str);\n        throw new IllegalArgumentException(str);"
+  },
+  {
+    "source": "    try {\n        val firstNumber = 50 / 2 * 0\n        try {\n            val secondNumber = 100 / firstNumber\n        } catch (exception: ArithmeticException) {\n            println(\"wow\")\n        }\n    } catch (exception: NumberFormatException) {\n        println(\"doublewow\")\n    }",
+    "decompiled": "        try {\n            try {\n                int i5 = 100 / 0;\n            } catch (ArithmeticException unused) {\n                System.out.println((Object) \"wow\");\n            }\n        } catch (NumberFormatException unused2) {\n            System.out.println((Object) \"doublewow\");\n        }"
+  },
+  {
+    "source": "    val message = \"Welcome to Kotlin Tutorials\"\n    if (message.length > 10) throw IllegalArgumentException(\"String is invalid\")\n    else return message.length",
+    "decompiled": "        throw new IllegalArgumentException(\"String is invalid\");"
+  },
+  {
+    "source": "    return filePath ?: throw IOException(\"File path is invalid\")",
+    "decompiled": "        i4.i.e(\"filePath\", path);\n        return path;"
+  },
+  {
+    "source": "    return try {\n        Integer.parseInt(str)\n    } catch (e: ArithmeticException) {\n        0\n    }",
+    "decompiled": "        i4.i.e(\"str\", str);\n        try {\n            return Integer.parseInt(str);\n        } catch (ArithmeticException unused) {\n            return 0;\n        }"
+  },
+  {
+    "source": "    val helloWorld = object {\n        val hello = \"Hello\"\n        val world = \"World\"\n        override fun toString() = \"$hello $world\"\n    }",
+    "decompiled": "        new Object() {\n\n            \n            public final String f3560a = \"Hello\";\n\n            \n            public final String f3561b = \"World\";\n\n            public final String getHello() {\n                return this.f3560a;\n            }\n\n            public final String getWorld() {\n                return this.f3561b;\n            }\n\n            public String toString() {\n                return this.f3560a + ' ' + this.f3561b;\n            }\n        };"
+  },
+  {
+    "source": "    ints.forEach {\n        if (it == 0) return true\n    }\n    return false",
+    "decompiled": "        i4.i.e(\"ints\", list);\n        for (Number number : list) {\n            if (number.intValue() == 0) {\n                return true;\n            }\n        }\n        return false;"
+  },
+  {
+    "source": "    print(data[\"name\"])\n    val data: Map<String, Any?> = mapOf(\n        \"name\" to \"putri\",\n        \"div\" to \"m4th\"\n    )",
+    "decompiled": "        i4.i.e(\"data\", map);\n        System.out.print(map.get(\"name\"));\n        v3.d[] dVarArr = {new v3.d(\"name\", \"putri\"), new v3.d(\"div\", \"m4th\")};\n        LinkedHashMap linkedHashMap = new LinkedHashMap(androidx.activity.m.v(2));\n        for (int i5 = 0; i5 < 2; i5++) {\n            v3.d dVar = dVarArr[i5];\n            linkedHashMap.put(dVar.c, dVar.f5689d);\n        }"
+  },
+  {
+    "source": "    val myMap = buildMap {\n        putAll(baseMap)\n        if (additionalEntry != null) {\n            put(additionalEntry.first, additionalEntry.second)\n        }\n    }",
+    "decompiled": "        i4.i.e(\"baseMap\", map);\n        x3.a aVar = new x3.a();\n        aVar.putAll(map);\n        if (dVar != null) {\n            aVar.put(dVar.c, dVar.f5689d);\n        }\n        aVar.c();\n        aVar.f5885n = true;"
+  },
+  {
+    "source": "    val convertedValue = Duration.convert(\n        value = 3.0,\n        sourceUnit = DurationUnit.DAYS,\n        targetUnit = DurationUnit.HOURS\n    )\n    return convertedValue",
+    "decompiled": "        int i5 = p4.a.c;\n        p4.c cVar = p4.c.DAYS;\n        p4.c cVar2 = p4.c.HOURS;\n        i4.i.e(\"sourceUnit\", cVar);\n        i4.i.e(\"targetUnit\", cVar2);\n        long convert = cVar2.c.convert(1L, cVar.c);\n        if (convert > 0) {\n            return 3.0d * convert;\n        }\n        return 3.0d / cVar.c.convert(1L, cVar2.c);"
+  },
+  {
+    "source": "    (1..10000).forEach {\n        GlobalScope.launch {\n            val threadName = Thread.currentThread().name\n            println(\"\\$it printed on thread \\${threadName}\")\n        }\n    }\n    Thread.sleep(1000)",
+    "decompiled": "        z3.g gVar;\n        int i5;\n        q4.a i1Var;\n        Iterator<Integer> it = new l4.j(1, 10000).iterator();\n        while (((l4.i) it).f4326e) {\n            ((o) it).nextInt();\n            h hVar = new h(null);\n            if (true & true) {\n                gVar = z3.g.c;\n            } else {\n                gVar = null;\n            }\n            boolean z4 = false;\n            if (true & true) {\n                i5 = 1;\n            } else {\n                i5 = 0;\n            }\n            z3.f a5 = q4.u.a(z3.g.c, gVar, true);\n            w4.c cVar = h0.f5030a;\n            if (a5 != cVar && a5.get(e.a.c) == null) {\n                a5 = a5.plus(cVar);\n            }\n            if (i5 != 0) {\n                if (i5 == 2) {\n                    z4 = true;\n                }\n                if (z4) {\n                    i1Var = new b1(a5, hVar);\n                } else {\n                    i1Var = new i1(a5, true);\n                }\n                i1Var.R(i5, i1Var, hVar);\n            } else {\n                throw null;\n            }\n        }\n        Thread.sleep(1000L);"
+  },
+  {
+    "source": "    liveData {\n        collect {\n            emit(it)\n        }\n    }",
+    "decompiled": "        z3.g gVar;\n        int i5;\n        q4.a i1Var;\n        Iterator<Integer> it = new l4.j(1, 10000).iterator();\n        while (((l4.i) it).f4326e) {\n            ((o) it).nextInt();\n            h hVar = new h(null);\n            if (true & true) {\n                gVar = z3.g.c;\n            } else {\n                gVar = null;\n            }\n            boolean z4 = false;\n            if (true & true) {\n                i5 = 1;\n            } else {\n                i5 = 0;\n            }\n            z3.f a5 = q4.u.a(z3.g.c, gVar, true);\n            w4.c cVar = h0.f5030a;\n            if (a5 != cVar && a5.get(e.a.c) == null) {\n                a5 = a5.plus(cVar);\n            }\n            if (i5 != 0) {\n                if (i5 == 2) {\n                    z4 = true;\n                }\n                if (z4) {\n                    i1Var = new b1(a5, hVar);\n                } else {\n                    i1Var = new i1(a5, true);\n                }\n                i1Var.R(i5, i1Var, hVar);\n            } else {\n                throw null;\n            }\n        }\n        Thread.sleep(1000L);"
+  },
+  {
+    "source": "    var latest: Any? = NULL\n    return flow {\n        collectIndexed { index, value ->\n            if (index != 0 || value !== latest) {\n                emit(value)\n                latest = value\n            }\n        }\n    }",
+    "decompiled": "        z3.g gVar;\n        int i5;\n        q4.a i1Var;\n        Iterator<Integer> it = new l4.j(1, 10000).iterator();\n        while (((l4.i) it).f4326e) {\n            ((o) it).nextInt();\n            h hVar = new h(null);\n            if (true & true) {\n                gVar = z3.g.c;\n            } else {\n                gVar = null;\n            }\n            boolean z4 = false;\n            if (true & true) {\n                i5 = 1;\n            } else {\n                i5 = 0;\n            }\n            z3.f a5 = q4.u.a(z3.g.c, gVar, true);\n            w4.c cVar = h0.f5030a;\n            if (a5 != cVar && a5.get(e.a.c) == null) {\n                a5 = a5.plus(cVar);\n            }\n            if (i5 != 0) {\n                if (i5 == 2) {\n                    z4 = true;\n                }\n                if (z4) {\n                    i1Var = new b1(a5, hVar);\n                } else {\n                    i1Var = new i1(a5, true);\n                }\n                i1Var.R(i5, i1Var, hVar);\n            } else {\n                throw null;\n            }\n        }\n        Thread.sleep(1000L);"
+  },
+  {
+    "source": "    coroutineScope<Unit> {\n        launch {\n            users.forEach { user -> println(user) }\n        }\n    }",
+    "decompiled": "        Object a5 = q4.e.a(new g(list, null), dVar);\n        return a5 == a4.a.COROUTINE_SUSPENDED ? a5 : m.f5692a;"
+  },
+  {
+    "source": "    val _sharedViewEffects = MutableSharedFlow<Int>(\n        replay = 1,\n        extraBufferCapacity = qefbnqoekrib(\"x\"),\n        onBufferOverflow = BufferOverflow.DROP_OLDEST)\n    val sharedViewEffects = _sharedViewEffects.asSharedFlow()\n    return sharedViewEffects",
+    "decompiled": "        return new t4.k(androidx.activity.m.a(1, qefbnqoekrib(\"x\"), s4.d.DROP_OLDEST));"
+  },
+  {
+    "source": "    shared.tryEmit(qefbnqoekrib(\"64g\"))\n    val state = shared.distinctUntilChanged()\n    return state",
+    "decompiled": "        i4.i.e(\"shared\", iVar);\n        iVar.b(Integer.valueOf(qefbnqoekrib(\"64g\")));\n        if (!(iVar instanceof t4.q)) {\n            v3.a aVar = t4.g.f5518d;\n            t4.f fVar = t4.f.f5517d;\n            if (iVar instanceof t4.b) {\n                t4.b bVar = (t4.b) iVar;\n                if (bVar.f5508d == aVar && bVar.f5509e == fVar) {\n                    return iVar;\n                }\n            }\n            return new t4.b(iVar);\n        }\n        return iVar;"
+  },
+  {
+    "source": "    runBlocking {\n        val testFlow = MutableSharedFlow<String>()\n        testFlow.tryEmit(\"a\")\n        val job = testFlow\n            .onEach { println(it) }\n            .launchIn(this)\n        delay(100)\n        job.cancel()\n    }",
+    "decompiled": "        q4.e.c(z3.g.c, new b(null));"
+  },
+  {
+    "source": "    runBlocking {\n        val testFlow = MutableSharedFlow<String>(replay = 1)\n        testFlow.tryEmit(\"a\")\n        testFlow.tryEmit(\"b\")\n        val job = testFlow\n            .onEach { println(it) }\n            .launchIn(this)\n        delay(100)\n\n\n        val job2 = testFlow\n            .onEach { println(it) }\n            .launchIn(this)\n\n        job.cancel()\n        delay(100)\n        job2.cancel()\n    }",
+    "decompiled": "        q4.e.c(z3.g.c, new c(null));"
+  },
+  {
+    "source": "    coroutineScope {\n\n        launch(newSingleThreadContext(\"Custom Thread\")) {\n            println(\"cor: ${Thread.currentThread().name}\")\n        }\n\n        println(\"fun: ${Thread.currentThread().name}\")\n    }",
+    "decompiled": "        Object a5 = q4.e.a(new d(null), dVar);\n        return a5 == a4.a.COROUTINE_SUSPENDED ? a5 : m.f5692a;"
+  },
+  {
+    "source": "    newSingleThreadContext(\"Ctx1\").use { ctx1 ->\n        newSingleThreadContext(\"Ctx2\").use { ctx2 ->\n            runBlocking(ctx1) {\n                log(a)\n                withContext(ctx2) {\n                    log(b)\n                }\n                log(0.0)\n            }\n        }\n    }",
+    "decompiled": "        p0 i5 = b3.d.i(\"Ctx1\");\n        try {\n            p0 i6 = b3.d.i(\"Ctx2\");\n            ((Number) q4.e.c(i5, new e(d5, i6, d6, null))).doubleValue();\n            b3.d.c(i6, null);\n            b3.d.c(i5, null);\n        } finally {\n        }"
+  },
+  {
+    "source": "    coroutineScope {\n        val channel = Channel<Int>()\n        launch {\n            for (n in 1..a) {\n                channel.send(n)\n            }\n        }\n    }",
+    "decompiled": "        Object a5 = q4.e.a(new f(i5, null), dVar);\n        return a5 == a4.a.COROUTINE_SUSPENDED ? a5 : m.f5692a;"
+  },
+  {
+    "source": "    val _counter = MutableStateFlow(a)\n    val counter = _counter.asStateFlow()\n\n    fun inc() {\n        _counter.update { count -> count + 1 }\n    }",
+    "decompiled": "        Object valueOf = Integer.valueOf(i5);\n        if (valueOf == null) {\n            valueOf = androidx.activity.m.f76m;\n        }\n        new r(valueOf);"
+  },
+  {
+    "source": "annotation class Suspendable\n\nval f = @Suspendable { println(\"well\") }",
+    "decompiled": "public @interface Suspendable {\n}\n"
+  },
+  {
+    "source": "class TownSquare : Room(\"Town Square\") {\n    override val dangerLevel = super.dangerLevel - 3\n    private var bellSound = \"GWONG\"\n    override fun load() = \"The villagers rally and cheer as you enter!\\n${ringBell()}\"\n    private fun ringBell() = \"The bell tower announces your arrival. $bellSound\"\n}",
+    "decompiled": "public final class TownSquare extends Room {\n    public final int c;\n\n    \n    public String f3583d;\n\n    public TownSquare() {\n        super(\"Town Square\");\n        this.c = super.getDangerLevel() - 3;\n        this.f3583d = \"GWONG\";\n    }\n\n    @Override\n    public int getDangerLevel() {\n        return this.c;\n    }\n\n    @Override\n    public String load() {\n        StringBuilder e5 = e.e(\"The villagers rally and cheer as you enter!\\n\");\n        StringBuilder e6 = e.e(\"The bell tower announces your arrival. \");\n        e6.append(this.f3583d);\n        e5.append(e6.toString());\n        return e5.toString();\n    }\n}\n"
+  },
+  {
+    "source": "data class User(val name: String, val age: Int)\n",
+    "decompiled": "public final class User {\n\n    \n    public final String f3584a;\n\n    \n    public final int f3585b;\n\n    public User(String str, int i5) {\n        i.e(\"name\", str);\n        this.f3584a = str;\n        this.f3585b = i5;\n    }\n\n    public static  User copy$default(User user, String str, int i5, int i6, Object obj) {\n        if ((i6 & 1) != 0) {\n            str = user.f3584a;\n        }\n        if ((i6 & 2) != 0) {\n            i5 = user.f3585b;\n        }\n        return user.copy(str, i5);\n    }\n\n    public final String component1() {\n        return this.f3584a;\n    }\n\n    public final int component2() {\n        return this.f3585b;\n    }\n\n    public final User copy(String str, int i5) {\n        i.e(\"name\", str);\n        return new User(str, i5);\n    }\n\n    public boolean equals(Object obj) {\n        if (this == obj) {\n            return true;\n        }\n        if (obj instanceof User) {\n            User user = (User) obj;\n            return i.a(this.f3584a, user.f3584a) && this.f3585b == user.f3585b;\n        }\n        return false;\n    }\n\n    public final int getAge() {\n        return this.f3585b;\n    }\n\n    public final String getName() {\n        return this.f3584a;\n    }\n\n    public int hashCode() {\n        return Integer.hashCode(this.f3585b) + (this.f3584a.hashCode() * 31);\n    }\n\n    public String toString() {\n        StringBuilder e5 = e.e(\"User(name=\");\n        e5.append(this.f3584a);\n        e5.append(\", age=\");\n        e5.append(this.f3585b);\n        e5.append(')');\n        return e5.toString();\n    }\n}\n"
+  },
+  {
+    "source": "class Version(val major: Int, val minor: Int): Comparable<Version> {\n    override fun compareTo(other: Version): Int {\n        if (this.major != other.major) {\n            return this.major - other.major\n        }\n        return this.minor - other.minor\n    }\n}",
+    "decompiled": "public final class Version implements Comparable<Version> {\n\n    \n    public final int f3586a;\n\n    \n    public final int f3587b;\n\n    public Version(int i5, int i6) {\n        this.f3586a = i5;\n        this.f3587b = i6;\n    }\n\n    public final int getMajor() {\n        return this.f3586a;\n    }\n\n    public final int getMinor() {\n        return this.f3587b;\n    }\n\n    @Override\n    public int compareTo(Version version) {\n        i.e(\"other\", version);\n        int i5 = this.f3586a;\n        int i6 = version.f3586a;\n        return i5 != i6 ? i5 - i6 : this.f3587b - version.f3587b;\n    }\n}\n"
+  }
+]
